@@ -226,6 +226,44 @@ header {
        text-decoration: none; 
        color: inherit; 
 }
+.auth {
+       display: flex;
+       gap: 10px;
+   }
+   
+   #user-info {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       padding: 5px 10px;
+       border: none;
+       background-color: white;
+       color: black;
+       font-size: 14px;
+       cursor: pointer;
+       text-decoration: none;
+       border-radius: 5px;
+       
+   }
+   .hidden{
+       display: none;
+   }
+   
+   #user-info #btn-logout {
+       padding: 5px 10px;
+       border: none;
+       background-color: blue;
+       color: white;
+       font-size: 14px;
+       cursor: pointer;
+       border-radius: 5px;
+   }
+   
+   #user-info #btn-logout:hover {
+       background-color: darkblue;
+   }
+
+
 .menu{
        display: flex; 
        justify-content: center; 
@@ -264,19 +302,19 @@ header {
 .menu a:hover {
        background-color: #1a1a80; 
 }
-/* Main Content Styles */
+
 .main-content {
        padding: 30px 20px;
        background-color: #f5f7fa;
    }
    
-   /* Course Section Styles */
+   
    .course-section {
        margin-bottom: 50px;
        background-color: white;
        border-radius: 8px;
        padding: 25px;
-       box-shadow: 0 1px 3px #e0e0e0; /* Thay rgba bằng mã màu hex */
+       box-shadow: 0 1px 3px #e0e0e0; 
    }
    
    .section-header {
@@ -317,20 +355,20 @@ header {
        transform: translateX(3px);
    }
    
-   /* Course Grid Styles */
+   
    .course-grid {
        display: flex;
        flex-wrap: wrap;
        gap: 20px;
    }
    
-   /* Course Card Styles */
+  
    .course-card {
        width: 23%;
        background-color: white;
        border-radius: 8px;
        overflow: hidden;
-       box-shadow: 0 1px 4px #d1d1d1; /* Thay rgba bằng mã màu hex */
+       box-shadow: 0 1px 4px #d1d1d1; 
        transition: transform 0.3s, box-shadow 0.3s;
        display: flex;
        flex-direction: column;
@@ -339,7 +377,7 @@ header {
    
    .course-card:hover {
        transform: translateY(-5px);
-       box-shadow: 0 4px 8px #c0c0c0; /* Thay rgba bằng mã màu hex */
+       box-shadow: 0 4px 8px #c0c0c0; 
    }
    
    .course-image {
@@ -495,7 +533,7 @@ header {
        background-color: darkblue;
    }
    
-   /* Section Specific Styles */
+   
    .free-trial-section {
        border-top: 3px solid #2ecc71;
    }
@@ -606,4 +644,6 @@ header {
               width: 100%;
               justify-content: space-between;
        }
+       
 }
+
