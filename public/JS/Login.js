@@ -1,10 +1,25 @@
 const users = [];
+let URL;
+if (
+  window.location.hostname.includes("localhost") ||
+  window.location.hostname.includes("127.0.0.1")
+) {
+  URL = "http://localhost:3000/users";
+} else {
+  URL = "https://course-web-html.onrender.com/users";
+}
 $(document).ready(function () {
-  $.getJSON("../data/data.json", function (data) {
-    users.push(...data.users);
-  }).fail(function () {
-    console.error("Không thể tải file JSON");
+  const getAllUsers = (callback) => {
+    fetch(URL)
+      .then((response) => response.json()) // Trả về 1 promise
+      .then(callback); // Trả về hàm có chữa dữ liệu vừa được thêm để sau này xử lý
+  };
+
+  getAllUsers((data) => {
+    users.push(...data);
   });
+
+
   $("#loginForm").on("submit", function (event) {
     event.preventDefault();
     let username = $("#username").val();

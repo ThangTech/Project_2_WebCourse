@@ -10,11 +10,16 @@ if (
 }
 
 $(document).ready(function () {
-  $.getJSON("../data/data.json", function (data) {
-    users.push(...data.users);
-  }).fail(function () {
-    console.error("Không thể tải file JSON");
+  const getAllUsers = (callback) => {
+    fetch(URL)
+      .then((response) => response.json()) // Trả về 1 promise
+      .then(callback); // Trả về hàm có chữa dữ liệu vừa được thêm để sau này xử lý
+  };
+
+  getAllUsers((data) => {
+    users.push(...data);
   });
+  
   $("#registerForm").on("submit", function (event) {
     event.preventDefault();
     let name = $("#name").val();
@@ -39,23 +44,21 @@ $(document).ready(function () {
     };
 
     const addUser = (data, callback) => {
-       let option = {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(data), // Truyền dữ liệu JSON cho web
-       };
-       fetch(URL, option)
-         .then((response) => response.json()) // Trả về 1 promise
-         .then(callback); // Trả về hàm có chữa dữ liệu vừa được thêm để sau này xử lý
-     }
+      let option = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // Truyền dữ liệu JSON cho web
+      };
+      fetch(URL, option)
+        .then((response) => response.json()) // Trả về 1 promise
+        .then(callback); // Trả về hàm có chữa dữ liệu vừa được thêm để sau này xử lý
+    };
 
     addUser(user, (data) => {
       window.location.href = "./Login.html";
     });
-
-    
 
     alert("Đăng ký thành công. Bạn có thể đăng nhập ngay bây giờ!");
     window.location.href = "./Login.html";
