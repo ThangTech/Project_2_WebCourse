@@ -1,25 +1,30 @@
-$(document).ready(function() {
-    $("#loginForm").on("submit", function(event) {
-        event.preventDefault();
-        let username = $("#username").val();
-        let password = $("#password").val();
-        let rememberMe = $("#remember").prop("checked");
-        let user = localStorage.getItem(username);
-        
-        if (user) {
-            let parsedUser = JSON.parse(user);
-            if (parsedUser.password === password) {
-                if(rememberMe) {
-                    localStorage.setItem("user", JSON.stringify(parsedUser));
-                } else {
-                    sessionStorage.setItem("user", JSON.stringify(parsedUser));
-                }
-                window.location.href = "../index.html";
-            } else {
-                alert("Sai mật khẩu!");
-            }
-        } else {
-            alert("Người dùng không tồn tại!");
-        }
-    });
+const users = [];
+$(document).ready(function () {
+  $.getJSON("../JS/auth.json", function (data) {
+    users.push(...data);
+  }).fail(function () {
+    console.error("Không thể tải file JSON");
+  });
+  $("#loginForm").on("submit", function (event) {
+    event.preventDefault();
+    let username = $("#username").val();
+    let password = $("#password").val();
+    let rememberMe = $("#remember").prop("checked");
+
+    const userLogin = users.filter((user) => user.username === username)[0];
+    if (!userLogin) {
+      alert("Người dùng không tồn tại!");
+      return;
+    }
+
+    const isVerified = userLogin.password === password;
+    if (!isVerified) {
+      alert("Sai mật khẩu!");
+      return;
+    }
+    if (rememberMe) {
+      userLogin.remember = true;
+    }
+    localStorage.setItem("auth", JSON.stringify(userLogin));
+  });
 });

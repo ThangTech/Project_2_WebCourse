@@ -1,5 +1,6 @@
 $(document).ready(function() {
-       let user = localStorage.getItem("user"); 
+       let user = localStorage.getItem("ThangElnino");
+       console.log(1); 
        if (user) {
            let parsedUser = JSON.parse(user);
            $("#welcome").html('Xin chào, ' + parsedUser.name);
