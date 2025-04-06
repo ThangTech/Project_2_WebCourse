@@ -26,5 +26,7 @@ $(document).ready(function () {
       userLogin.remember = true;
     }
     localStorage.setItem("auth", JSON.stringify(userLogin));
+       alert("Đăng nhập thành công!");
+       window.location.href = "../index.html";
   });
 });

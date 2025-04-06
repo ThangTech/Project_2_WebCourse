@@ -1,6 +1,5 @@
 $(document).ready(function() {
-       let user = localStorage.getItem("ThangElnino");
-       console.log(1); 
+       let user = localStorage.getItem("auth");
        if (user) {
            let parsedUser = JSON.parse(user);
            $("#welcome").html('Xin chào, ' + parsedUser.name);
@@ -17,7 +16,7 @@ $(document).ready(function() {
        }
    
        $("#btn-logout").on("click", function() {
-           localStorage.removeItem("user"); 
+           localStorage.removeItem("auth"); 
            window.location.reload(); 
        });
    });
