@@ -1,7 +1,7 @@
 const users = [];
 $(document).ready(function () {
-  $.getJSON("../JS/auth.json", function (data) {
-    users.push(...data);
+  $.getJSON("../data/data.json", function (data) {
+    users.push(...data.users);
   }).fail(function () {
     console.error("Không thể tải file JSON");
   });
@@ -26,7 +26,7 @@ $(document).ready(function () {
       userLogin.remember = true;
     }
     localStorage.setItem("auth", JSON.stringify(userLogin));
-       alert("Đăng nhập thành công!");
-       window.location.href = "../index.html";
+    alert("Đăng nhập thành công!");
+    window.location.href = "../index.html";
   });
 });

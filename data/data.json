@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "Nguyen Van Thang",
+      "password": "1234",
+      "username": "ThangElnino",
+      "remember": false,
+      "id": "dba8"
+    },
+    {
+      "name": "Nguyen Di Dan",
+      "password": "1234",
+      "username": "DanElkun",
+      "remember": false,
+      "id": "aab7"
+    }
+  ]
+}
