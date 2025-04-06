@@ -6,7 +6,7 @@ if (
 ) {
   URL = "http://localhost:3000/users";
 } else {
-  URL = "https://json-server-1-0-0.herokuapp.com/users";
+  URL = "https://course-web-html.onrender.com/users";
 }
 
 $(document).ready(function () {
