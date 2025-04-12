@@ -317,6 +317,7 @@ header {
   display: none;
   margin: 0 auto;
   padding-bottom: 10px;
+  border-radius: 20px;
 }
 img.displaySlide {
   display: block;
