@@ -297,47 +297,64 @@ header {
 }
 
 .menu a:hover {
-  background-color: #1a1a80;
+  background-color: aqua;
 }
 
 .main-content {
   padding: 30px 20px;
   background-color: #f5f7fa;
 }
-.slider{
-       position: relative;
-       width: 100%;
-       margin: auto;
-       overflow: hidden;
-       text-align: center;
-       
+.slider {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
 }
-.slider img{
-       width: 70%;
-       padding-top: 10px;
-       display: none;
-       margin: 0 auto;
-       padding-bottom: 10px;
-      
+.slider img {
+  width: 70%;
+  padding-top: 10px;
+  display: none;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
-img.displaySlide{
-       display: block;
+img.displaySlide {
+  display: block;
 }
-.slider button{
-       position: absolute;
-       top: 50%;
-       transform: translateX(-50%);
-       font-size: 40px;
-       border: none;
-       cursor: pointer;
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
 }
-.prev{
-       left: 216px
+.prev {
+  left: 216px;
+}
+.next {
+  right: 183px;
+}
+.btn-details {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
 
+.btn-details:hover {
+  background-color: #e9e9e9;
+  color: #333;
 }
-.next{
-       right: 183px;
-}
+
 .course-section {
   margin-bottom: 50px;
   background-color: white;
@@ -485,7 +502,85 @@ img.displaySlide{
 .course-rating {
   margin-bottom: 10px;
 }
+.main-content {
+       padding: 40px 20px;
+       background-color: #f9f9f9;
+     }
+     .about-section {
+       max-width: 1200px;
+       margin: 0 auto;
+       background-color: white;
+       border-radius: 8px;
+       box-shadow: 0 4px 8px;
+       padding: 30px;
+     }
+     
+     .page-title {
+       font-size: 32px;
+       font-weight: bold;
+       text-align: center;
+       margin-bottom: 30px;
+       color: #333;
+     }
+     
+     .about-content {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 20px;
+       align-items: center;
+     }
+     
+     .about-image img {
+       width: 100%;
+       max-width: 500px;
+       border-radius: 8px;
+       box-shadow: 0 4px 8px;
+     }
+     
+     .about-text {
+       flex: 1;
+     }
+     .about-text h2 {
+       font-size: 24px;
+       color: #333;
+       margin-bottom: 10px;
+     }
 
+     .about-text p {
+       font-size: 16px;
+       line-height: 1.6;
+       color: #555;
+       margin-bottom: 20px;
+     }
+     .stats-section {
+       display: flex;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       margin-top: 30px;
+       gap: 20px;
+     }
+     
+     .stat-item {
+       flex: 1;
+       min-width: 200px;
+       text-align: center;
+       background-color: #f5f5f5;
+       border-radius: 8px;
+       padding: 20px;
+       box-shadow: 0 2px 4px;
+     }
+     
+     .stat-number {
+       font-size: 28px;
+       font-weight: bold;
+       color: #333;
+     }
+     
+     .stat-label {
+       font-size: 16px;
+       color: #777;
+       margin-top: 5px;
+     }
 .stars {
   color: #f9ca24;
   letter-spacing: 2px;
@@ -536,6 +631,9 @@ img.displaySlide{
 
 .course-action {
   margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap : 10px;
 }
 
 .btn {
@@ -554,6 +652,7 @@ img.displaySlide{
   color: white;
   border: none;
   width: 100%;
+  flex: 1;
 }
 
 .btn-primary:hover {
@@ -583,7 +682,7 @@ img.displaySlide{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 80px; 
+  width: 80px;
   height: 40px;
   background-color: white;
   color: black;
@@ -595,7 +694,7 @@ img.displaySlide{
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  border-radius: 5px; 
+  border-radius: 5px;
   display: none;
 }
 #go-to-top:hover {

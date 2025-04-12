@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My's Course</title>
+    <link rel="icon" href="./Stograge/Images/course.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="../JS/jquery/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../JS/jqhello.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../Stograge/Images/Home/logo1.jpg" alt="logo" />
+      </div>
+      <div class="category">
+        <div class="category-trigger">
+          <img src="../Stograge/Images/Home/category.jpg" alt="" />
+          <h3>DANH MỤC</h3>
+        </div>
+        <div class="category-dropdown">
+          <div class="dropdown-content">
+            <div class="dropdown-category">
+              <h4>Lập trình Web</h4>
+              <ul>
+                <li><a href="#">HTML/CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">React</a></li>
+                <li><a href="#">Vue</a></li>
+                <li><a href="#">Angular</a></li>
+                <li><a href="#">Node.js</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Laravel</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Lập trình Mobile</h4>
+              <ul>
+                <li><a href="#">React Native</a></li>
+                <li><a href="#">Flutter</a></li>
+                <li><a href="#">Android (Java/Kotlin)</a></li>
+                <li><a href="#">iOS (Swift)</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Ngôn ngữ lập trình</h4>
+              <ul>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">C/C++</a></li>
+                <li><a href="#">C#</a></li>
+                <li><a href="#">Ruby</a></li>
+                <li><a href="#">Go</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Cơ sở dữ liệu</h4>
+              <ul>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">MongoDB</a></li>
+                <li><a href="#">Firebase</a></li>
+                <li><a href="#">Redis</a></li>
+                <li><a href="#">PostgreSQL</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>DevOps & Cloud</h4>
+              <ul>
+                <li><a href="#">Docker</a></li>
+                <li><a href="#">Kubernetes</a></li>
+                <li><a href="#">AWS</a></li>
+                <li><a href="#">Azure</a></li>
+                <li><a href="#">Google Cloud</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Trí tuệ nhân tạo</h4>
+              <ul>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Deep Learning</a></li>
+                <li><a href="#">Computer Vision</a></li>
+                <li><a href="#">NLP</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-footer">
+            <a href="#">Xem tất cả danh mục</a>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <input
+          type="search"
+          placeholder="Tìm kiếm khóa học, giảng viên"
+          required
+        />
+        <button type="submit">
+          <img src="../Stograge/Images/Home/search.jpg" alt="Search Icon" />
+        </button>
+      </div>
+      <div class="actions">
+        <div class="cart">
+          <button>
+            <img src="../Stograge/Images/Home/cart.jpg" alt="Cart Icon" />
+            <a href="#">Giỏ hàng (0)</a>
+          </button>
+        </div>
+        <div class="auth">
+          <div class="login">
+            <button>
+              <a href="../Home/Login.html" target="_blank">Đăng nhập</a>
+            </button>
+          </div>
+          <div class="register">
+            <button>
+              <a href="../Home/Register.html" target="_blank">Đăng ký</a>
+            </button>
+          </div>
+        </div>
+        <div id="user-info">
+          <span id="welcome">Xin chào, </span>
+          <button id="btn-logout" class="hidden">Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="#">Khóa học</a></li>
+          <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main id="about-main" class="main-content">
+      <section class="about-section">
+        <div class="container">
+          <h1 class="page-title">Giới thiệu về My's Course</h1>
+
+          <div class="about-content">
+            <div class="about-image">
+              <img
+                src="../Stograge/Images/SlideShow/slideshow7.jpg"
+                alt="My's Course Team"
+              />
+            </div>
+
+            <div class="about-text">
+              <h2>Sứ mệnh của chúng tôi</h2>
+              <p>
+                My's Course ra đời với sứ mệnh mang đến kiến thức lập trình chất
+                lượng cao, dễ tiếp cận cho mọi người Việt Nam. Chúng tôi tin
+                rằng giáo dục công nghệ là chìa khóa để phát triển sự nghiệp
+                trong kỷ nguyên số.
+              </p>
+
+              <h2>Đội ngũ giảng viên</h2>
+              <p>
+                Đội ngũ giảng viên của chúng tôi là những chuyên gia hàng đầu
+                trong ngành, với nhiều năm kinh nghiệm thực tế tại các công ty
+                công nghệ lớn trong và ngoài nước.
+              </p>
+
+              <h2>Phương pháp giảng dạy</h2>
+              <p>
+                Chúng tôi áp dụng phương pháp học thông qua thực hành, với nhiều
+                bài tập và dự án thực tế. Học viên sẽ được hướng dẫn từng bước
+                để xây dựng các ứng dụng hoàn chỉnh.
+              </p>
+            </div>
+          </div>
+
+          <div class="stats-section">
+            <div class="stat-item">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Học viên</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Khóa học</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Giảng viên</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Đánh giá tích cực</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Thông tin liên hệ</h3>
+          <p>Địa chỉ: Huyện Ân Thi, Tỉnh Hưng Yên</p>
+          <p>
+            Email:
+            <a href="mailto:nguyenvanthangktpm@gmail.com">info@myscourse.com</a>
+          </p>
+          <p>Điện thoại: <a href="tel:+84387753585">+84 387 753 585 </a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="../index.html">Trang chủ</a></li>
+            <li><a href="#">Khóa học</a></li>
+            <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Theo dõi chúng tôi</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/thangnguyen.elnino"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a
+              href="https://www.linkedin.com/in/th%E1%BA%AFng-nguy%E1%BB%85n-v%C4%83n-b8582a355/"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+            <a href="https://www.youtube.com/@ThangSanZaii"
+              ><i class="fa fa-youtube-play"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29824.475903756727!2d106.07413374265639!3d20.86965236781047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135bcc2150e5e7b%3A0x886e405adc5ef92!2zQuG6r2MgU8ahbiwgw4JuIFRoaSwgSMawbmcgWcOqbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1743960742401!5m2!1svi!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 My's Course. All rights reserved.</p>
+      </div>
+      <script src="../JS/Home.js"></script>
+    </footer>
+  </body>
+</html>
