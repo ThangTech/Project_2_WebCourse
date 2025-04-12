@@ -304,7 +304,40 @@ header {
   padding: 30px 20px;
   background-color: #f5f7fa;
 }
+.slider{
+       position: relative;
+       width: 100%;
+       margin: auto;
+       overflow: hidden;
+       text-align: center;
+       
+}
+.slider img{
+       width: 70%;
+       padding-top: 10px;
+       display: none;
+       margin: 0 auto;
+       padding-bottom: 10px;
+      
+}
+img.displaySlide{
+       display: block;
+}
+.slider button{
+       position: absolute;
+       top: 50%;
+       transform: translateX(-50%);
+       font-size: 40px;
+       border: none;
+       cursor: pointer;
+}
+.prev{
+       left: 216px
 
+}
+.next{
+       right: 183px;
+}
 .course-section {
   margin-bottom: 50px;
   background-color: white;
