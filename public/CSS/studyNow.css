@@ -1,0 +1,411 @@
+
+.learning-content {
+  background-color: #f8f9fa;
+  min-height: 500px;
+  padding: 20px 0;
+}
+
+.learning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.learning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.course-title-section h1 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.course-instructor {
+  display: flex;
+  align-items: center;
+}
+
+.course-instructor img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.course-progress {
+  min-width: 250px;
+  margin-top: 10px;
+}
+
+.progress-text {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 4px;
+}
+
+
+.learning-main {
+  display: flex;
+  gap: 20px;
+}
+
+
+.learning-sidebar {
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.sidebar-header {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.curriculum-list {
+  padding: 10px;
+}
+
+.curriculum-section {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f7fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.section-title i {
+  margin-right: 10px;
+  color: #666;
+}
+
+.section-title h4 {
+  margin: 0;
+  font-size: 14px;
+  flex: 1;
+}
+
+.section-progress {
+  font-size: 12px;
+  color: #666;
+  background-color: #e3f2fd;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.section-lessons {
+  padding: 5px 0 5px 25px;
+}
+
+.lesson-item {
+  display: flex;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.lesson-item:hover {
+  background-color: #f5f5f5;
+}
+
+.lesson-item.active {
+  background-color: #e3f2fd;
+}
+
+.lesson-status {
+  margin-right: 10px;
+}
+
+.lesson-item.completed .lesson-status i {
+  color: #4caf50;
+}
+
+.lesson-item.active .lesson-status i {
+  color: #2196f3;
+}
+
+.lesson-info {
+  flex: 1;
+}
+
+.lesson-title {
+  font-size: 13px;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.lesson-duration {
+  font-size: 11px;
+  color: #666;
+}
+
+.learning-content-area {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.lesson-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+}
+
+.tab-button:hover {
+  color: #333;
+}
+
+.tab-button.active {
+  color: #2196f3;
+  border-bottom-color: #2196f3;
+}
+
+.tab-content {
+  line-height: 1.6;
+}
+
+.tab-content h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tab-content h3 {
+  font-size: 18px;
+  margin: 20px 0 10px;
+  color: #444;
+}
+
+.lesson-description p {
+  margin-bottom: 15px;
+}
+
+.code-example {
+  background-color: #f5f7fa;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.code-example pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.resources-list {
+  margin-top: 15px;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.resource-item i {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #666;
+}
+
+.resource-item span {
+  flex: 1;
+}
+
+.download-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.download-button:hover {
+  background-color: #0d8aee;
+}
+
+.notes-container {
+  margin-bottom: 20px;
+}
+
+.notes-container textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.save-notes {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-notes:hover {
+  background-color: #3d9140;
+}
+
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  background-color: #f5f7fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #e9ecef;
+}
+
+.prev-button i {
+  margin-right: 8px;
+}
+
+.next-button i {
+  margin-left: 8px;
+}
+
+.complete-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.complete-button:hover {
+  background-color: #3d9140;
+}
+
+
+@media (max-width: 992px) {
+  .learning-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-progress {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .learning-main {
+    flex-direction: column;
+  }
+
+  .learning-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .lesson-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .tab-button {
+    padding: 10px 15px;
+  }
+
+  .lesson-navigation {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-button {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .learning-container {
+    padding: 10px;
+  }
+
+  .course-title-section h1 {
+    font-size: 20px;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
