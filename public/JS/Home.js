@@ -82,17 +82,19 @@ $(document).ready(function () {
 });
 //Xử lí sự kiện học ngay
 $(document).ready(function () {
-  function isLoggedIn() {
-    return localStorage.getItem("user") === "true";
-  }
-  $(".btn.btn-primary").on("click", function (event) {
-    event.preventDefault();
-    if (!isLoggedIn()) {
-      alert("Bạn cần đăng nhập để tiếp tục!");
-      window.location.href = "./Home/Login.html";
-    } else {
-      const courseLink = $(this).attr("href");
-      window.location.href = courseLink;
-    }
-  });
+       function isLoggedIn() {
+         const user = localStorage.getItem("auth");
+         return user !== null;
+       }
+     
+       $(".btn.btn-primary").on("click", function (event) {
+         event.preventDefault();
+         if (!isLoggedIn()) {
+           alert("Bạn cần đăng nhập để tiếp tục!");
+           window.location.href = "./Home/Login.html";
+         } else {
+           const courseLink = $(this).attr("href");
+           window.location.href = courseLink;
+         }
+       });
 });
