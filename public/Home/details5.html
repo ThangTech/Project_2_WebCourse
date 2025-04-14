@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & CSS cơ bản - My's Course</title>
+    <link rel="icon" href="./Stograge/Images/course.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/details.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="../JS/jquery/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../JS/jqhello.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../Stograge/Images/Home/logo1.jpg" alt="logo" />
+      </div>
+      <div class="category">
+        <div class="category-trigger">
+          <img src="../Stograge/Images/Home/category.jpg" alt="" />
+          <h3>DANH MỤC</h3>
+        </div>
+        <div class="category-dropdown">
+          <div class="dropdown-content">
+            <div class="dropdown-category">
+              <h4>Lập trình Web</h4>
+              <ul>
+                <li><a href="#">HTML/CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">React</a></li>
+                <li><a href="#">Vue</a></li>
+                <li><a href="#">Angular</a></li>
+                <li><a href="#">Node.js</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Laravel</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Lập trình Mobile</h4>
+              <ul>
+                <li><a href="#">React Native</a></li>
+                <li><a href="#">Flutter</a></li>
+                <li><a href="#">Android (Java/Kotlin)</a></li>
+                <li><a href="#">iOS (Swift)</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Ngôn ngữ lập trình</h4>
+              <ul>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">C/C++</a></li>
+                <li><a href="#">C#</a></li>
+                <li><a href="#">Ruby</a></li>
+                <li><a href="#">Go</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Cơ sở dữ liệu</h4>
+              <ul>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">MongoDB</a></li>
+                <li><a href="#">Firebase</a></li>
+                <li><a href="#">Redis</a></li>
+                <li><a href="#">PostgreSQL</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>DevOps & Cloud</h4>
+              <ul>
+                <li><a href="#">Docker</a></li>
+                <li><a href="#">Kubernetes</a></li>
+                <li><a href="#">AWS</a></li>
+                <li><a href="#">Azure</a></li>
+                <li><a href="#">Google Cloud</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-category">
+              <h4>Trí tuệ nhân tạo</h4>
+              <ul>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Deep Learning</a></li>
+                <li><a href="#">Computer Vision</a></li>
+                <li><a href="#">NLP</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-footer">
+            <a href="#">Xem tất cả danh mục</a>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <input type="search" placeholder="Tìm kiếm khóa học" required />
+        <button type="submit">
+          <img src="../Stograge/Images/Home/search.jpg" alt="Search Icon" />
+        </button>
+      </div>
+      <div class="actions">
+        <div class="cart">
+          <button>
+            <img src="../Stograge/Images/Home/cart.jpg" alt="Cart Icon" />
+            <a href="#">Giỏ hàng (0)</a>
+          </button>
+        </div>
+        <div class="auth">
+          <div class="login">
+            <button>
+              <a href="../Home/Login.html" target="_blank">Đăng nhập</a>
+            </button>
+          </div>
+          <div class="register">
+            <button>
+              <a href="../Home/Register.html" target="_blank">Đăng ký</a>
+            </button>
+          </div>
+        </div>
+        <div id="user-info">
+          <span id="welcome">Xin chào, </span>
+          <button id="btn-logout" class="hidden">Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="./AboutUs.html">Giới thiệu</a></li>
+          <li><a href="#">Giỏ hàng</a></li>
+          <li><a href="#">Khoá học của tôi</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main class="main-content">
+      <section class="course-header">
+        <div class="course-header-container">
+          <div class="course-header-content">
+            <div class="course-breadcrumb">
+              <a href="../index.html">Trang chủ</a> &gt;
+              <a href="#">Lập trình Web</a> &gt;
+              <span>React</span>
+            </div>
+            <h1>React cho lập trình viên</h1>
+            <p class="course-description">
+              Khóa học giúp bạn làm chủ React, thư viện JavaScript phổ biến nhất
+              để xây dựng giao diện người dùng. Hỗ trợ học viên từ cơ bản đến
+              nâng cao.
+            </p>
+            <div class="course-meta">
+              <div class="course-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(200 đánh giá)</span>
+              </div>
+              <div class="course-students">
+                <i class="fa fa-users"></i>
+                <span>4,500</span>
+              </div>
+              <div class="course-last-update">
+                <i class="fa fa-calendar"></i>
+                <span>Cập nhật: 25/03/2025</span>
+              </div>
+            </div>
+            <div class="course-instructor-brief">
+              <img
+                src="../Stograge/Images/Instructor/đian.jpg"
+                alt="Nguyễn Di Đan"
+              />
+              <span>Giảng viên: <strong>Nguyễn Di Đan</strong></span>
+            </div>
+            <div class="course-badge-large free">Bán chạy</div>
+          </div>
+          <div class="course-header-image">
+            <img src="../Stograge/Images/Homecard/react.jpg" alt="React" />
+          </div>
+        </div>
+      </section>
+      <section class="course-detail-container">
+        <div class="course-main-content">
+          <div class="course-section-block">
+            <h2>Bạn sẽ học được gì?</h2>
+            <div class="learning-objectives">
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span>Hiểu rõ cách hoạt động của React</span>
+              </div>
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span
+                  >Thành thạo JSX và cách sử dụng thành phần (Components)</span
+                >
+              </div>
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span>Quản lý trạng thái với State và Props</span>
+              </div>
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span>Sử dụng các Hook như useState và useEffect</span>
+              </div>
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span
+                  >Áp dụng React Router để xây dựng ứng dụng nhiều trang</span
+                >
+              </div>
+              <div class="objective-item">
+                <i class="fa fa-check"></i>
+                <span>Triển khai ứng dụng React lên môi trường thực tế</span>
+              </div>
+            </div>
+          </div>
+          <div class="course-section-block">
+            <h2>Nội dung khóa học</h2>
+            <div class="course-content-summary">
+              <div class="content-stats">
+                <div class="stat-item">
+                  <i class="fa fa-book"></i>
+                  <span>15 bài học</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fa fa-clock-o"></i>
+                  <span>8 giờ học</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fa fa-download"></i>
+                  <span>10 tài liệu</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fa fa-code"></i>
+                  <span>2 dự án thực tế</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-curriculum">
+              <div class="curriculum-section">
+                <div class="section-header">
+                  <h3>Phần 1: Giới thiệu về React</h3>
+                  <span>3 bài học • 45 phút</span>
+                </div>
+                <div class="section-content">
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-play-circle"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 1: React là gì và tại sao cần sử dụng?</span
+                      >
+                      <span class="lesson-duration">15 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-play-circle"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 2: Cài đặt môi trường phát triển React</span
+                      >
+                      <span class="lesson-duration">15 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-file-text"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 3: Tạo ứng dụng React đầu tiên</span
+                      >
+                      <span class="lesson-duration">15 phút</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="curriculum-section">
+                <div class="section-header">
+                  <h3>Phần 2: Thành phần cơ bản trong React</h3>
+                  <span>5 bài học • 2 giờ</span>
+                </div>
+                <div class="section-content">
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-play-circle"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 4: JSX và cách sử dụng</span
+                      >
+                      <span class="lesson-duration">25 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-play-circle"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 5: Thành phần (Components)</span
+                      >
+                      <span class="lesson-duration">30 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-play-circle"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 6: Props và cách truyền dữ liệu</span
+                      >
+                      <span class="lesson-duration">25 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-file-text"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 7: State và quản lý trạng thái</span
+                      >
+                      <span class="lesson-duration">25 phút</span>
+                    </div>
+                  </div>
+                  <div class="lesson-item">
+                    <div class="lesson-icon">
+                      <i class="fa fa-code"></i>
+                    </div>
+                    <div class="lesson-details">
+                      <span class="lesson-title"
+                        >Bài 8: Dự án mini - Ứng dụng quản lý công việc</span
+                      >
+                      <span class="lesson-duration">15 phút</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Thông tin liên hệ</h3>
+          <p>Địa chỉ: Huyện Ân Thi, Tỉnh Hưng Yên</p>
+          <p>
+            Email:
+            <a href="mailto:nguyenvanthangktpm@gmail.com">info@myscourse.com</a>
+          </p>
+          <p>Điện thoại: <a href="tel:+84387753585">+84 387 753 585 </a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="../index.html">Trang chủ</a></li>
+            <li><a href="#">Khóa học</a></li>
+            <li><a href="./AboutUs.html">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Theo dõi chúng tôi</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/thangnguyen.elnino"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a
+              href="https://www.linkedin.com/in/th%E1%BA%AFng-nguy%E1%BB%85n-v%C4%83n-b8582a355/"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+            <a href="https://www.youtube.com/@ThangSanZaii"
+              ><i class="fa fa-youtube-play"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29824.475903756727!2d106.07413374265639!3d20.86965236781047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135bcc2150e5e7b%3A0x886e405adc5ef92!2zQuG6r2MgU8ahbiwgw4JuIFRoaSwgSMawbmcgWcOqbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1743960742401!5m2!1svi!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 My's Course. All rights reserved.</p>
+      </div>
+      <script src="../JS/Home.js"></script>
+    </footer>
+  </body>
+</html>
