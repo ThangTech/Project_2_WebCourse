@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HTML & CSS cơ bản - My's Course</title>
+      <link rel="icon" href="./Stograge/Images/course.jpg" type="image/x-icon" />
+      <link rel="stylesheet" href="../CSS/style.css" />
+      <link rel="stylesheet" href="../CSS/studyNow.css">
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+         />
+      <script src="../JS/jquery/jquery-3.7.1.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src="../JS/jqhello.js"></script>
+   </head>
+   <body>
+      <header>
+         <div class="logo">
+            <img src="../Stograge/Images/Home/logo1.jpg" alt="logo" />
+         </div>
+         <div class="category">
+            <div class="category-trigger">
+               <img src="../Stograge/Images/Home/category.jpg" alt="" />
+               <h3>DANH MỤC</h3>
+            </div>
+            <div class="category-dropdown">
+               <div class="dropdown-content">
+                  <div class="dropdown-category">
+                     <h4>Lập trình Web</h4>
+                     <ul>
+                        <li><a href="#">HTML/CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">React</a></li>
+                        <li><a href="#">Vue</a></li>
+                        <li><a href="#">Angular</a></li>
+                        <li><a href="#">Node.js</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">Laravel</a></li>
+                     </ul>
+                  </div>
+                  <div class="dropdown-category">
+                     <h4>Lập trình Mobile</h4>
+                     <ul>
+                        <li><a href="#">React Native</a></li>
+                        <li><a href="#">Flutter</a></li>
+                        <li><a href="#">Android (Java/Kotlin)</a></li>
+                        <li><a href="#">iOS (Swift)</a></li>
+                     </ul>
+                  </div>
+                  <div class="dropdown-category">
+                     <h4>Ngôn ngữ lập trình</h4>
+                     <ul>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">C/C++</a></li>
+                        <li><a href="#">C#</a></li>
+                        <li><a href="#">Ruby</a></li>
+                        <li><a href="#">Go</a></li>
+                     </ul>
+                  </div>
+                  <div class="dropdown-category">
+                     <h4>Cơ sở dữ liệu</h4>
+                     <ul>
+                        <li><a href="#">SQL</a></li>
+                        <li><a href="#">MongoDB</a></li>
+                        <li><a href="#">Firebase</a></li>
+                        <li><a href="#">Redis</a></li>
+                        <li><a href="#">PostgreSQL</a></li>
+                     </ul>
+                  </div>
+                  <div class="dropdown-category">
+                     <h4>DevOps & Cloud</h4>
+                     <ul>
+                        <li><a href="#">Docker</a></li>
+                        <li><a href="#">Kubernetes</a></li>
+                        <li><a href="#">AWS</a></li>
+                        <li><a href="#">Azure</a></li>
+                        <li><a href="#">Google Cloud</a></li>
+                     </ul>
+                  </div>
+                  <div class="dropdown-category">
+                     <h4>Trí tuệ nhân tạo</h4>
+                     <ul>
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Deep Learning</a></li>
+                        <li><a href="#">Computer Vision</a></li>
+                        <li><a href="#">NLP</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="dropdown-footer">
+                  <a href="#">Xem tất cả danh mục</a>
+               </div>
+            </div>
+         </div>
+         <div class="search">
+            <input
+               type="search"
+               placeholder="Tìm kiếm khóa học"
+               required
+               />
+            <button type="submit">
+            <img src="../Stograge/Images/Home/search.jpg" alt="Search Icon" />
+            </button>
+         </div>
+         <div class="actions">
+            <div class="cart">
+               <button>
+               <img src="../Stograge/Images/Home/cart.jpg" alt="Cart Icon" />
+               <a href="#">Giỏ hàng (0)</a>
+               </button>
+            </div>
+            <div class="auth">
+               <div class="login">
+                  <button>
+                  <a href="../Home/Login.html" target="_blank">Đăng nhập</a>
+                  </button>
+               </div>
+               <div class="register">
+                  <button>
+                  <a href="../Home/Register.html" target="_blank">Đăng ký</a>
+                  </button>
+               </div>
+            </div>
+            <div id="user-info">
+               <span id="welcome">Xin chào, </span>
+               <button id="btn-logout" class="hidden">Đăng xuất</button>
+            </div>
+         </div>
+      </header>
+      <div class="menu">
+         <nav>
+            <ul>
+               <li><a href="../index.html">Trang chủ</a></li>
+               <li><a href="./AboutUs.html">Giới thiệu</a></li>
+               <li><a href="#">Giỏ hàng</a></li>
+               <li><a href="#">Khoá học của tôi</a></li>
+            </ul>
+         </nav>
+      </div>
+      <main class="learning-content">
+       <div class="learning-container">
+          <div class="learning-header">
+             <div class="course-title-section">
+                <h1>Python từ con số 0</h1>
+                <div class="course-instructor">
+                   <img src="../Stograge/Images/Instructor/in3.jpg" alt="Lê Văn Mai" />
+                   <span>Giảng viên: <strong>Lê Văn Mai</strong></span>
+                </div>
+             </div>
+             <div class="course-progress">
+                <div class="progress-text">
+                   <span>Tiến độ: 2/15 bài học (13%)</span>
+                </div>
+                <div class="progress-bar">
+                   <div class="progress-fill" style="width: 13%"></div>
+                </div>
+             </div>
+          </div>
+          <div class="learning-main">
+             <div class="learning-sidebar">
+                <div class="sidebar-header">
+                   <h3>Nội dung khóa học</h3>
+                </div>
+                <div class="curriculum-list">
+                   <div class="curriculum-section">
+                      <div class="section-title">
+                         <i class="fa fa-chevron-down"></i>
+                         <h4>Phần 1: Giới thiệu về JavaScript</h4>
+                         <span class="section-progress">3/3</span>
+                      </div>
+                      <div class="section-lessons">
+                         <div class="lesson-item completed">
+                            <div class="lesson-status">
+                               <i class="fa fa-check-circle"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 1: JavaScript là gì và tại sao cần học?</span>
+                               <span class="lesson-duration">15 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item completed">
+                            <div class="lesson-status">
+                               <i class="fa fa-check-circle"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 2: Cài đặt môi trường phát triển</span>
+                               <span class="lesson-duration">15 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item active">
+                            <div class="lesson-status">
+                               <i class="fa fa-play-circle"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 3: Cú pháp cơ bản và cách chạy JavaScript</span>
+                               <span class="lesson-duration">15 phút</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="curriculum-section">
+                      <div class="section-title">
+                         <i class="fa fa-chevron-right"></i>
+                         <h4>Phần 2: Biến và Kiểu dữ liệu</h4>
+                         <span class="section-progress">0/5</span>
+                      </div>
+                      <div class="section-lessons" style="display: none;">
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 4: Biến và cách khai báo (var, let, const)</span>
+                               <span class="lesson-duration">25 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 5: Kiểu dữ liệu cơ bản (Number, String, Boolean)</span>
+                               <span class="lesson-duration">30 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 6: Kiểu dữ liệu phức tạp (Array, Object)</span>
+                               <span class="lesson-duration">25 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 7: Chuyển đổi kiểu dữ liệu</span>
+                               <span class="lesson-duration">25 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 8: Dự án mini - Ứng dụng tính toán đơn giản</span>
+                               <span class="lesson-duration">15 phút</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="curriculum-section">
+                      <div class="section-title">
+                         <i class="fa fa-chevron-right"></i>
+                         <h4>Phần 3: Cấu trúc điều khiển</h4>
+                         <span class="section-progress">0/4</span>
+                      </div>
+                      <div class="section-lessons" style="display: none;">
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 9: Câu lệnh điều kiện (if, else, switch)</span>
+                               <span class="lesson-duration">30 phút</span>
+                            </div>
+                         </div>
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 10: Vòng lặp (for, while, do-while)</span>
+                               <span class="lesson-duration">30 phút</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="curriculum-section">
+                      <div class="section-title">
+                         <i class="fa fa-chevron-right"></i>
+                         <h4>Phần 4: Hàm trong JavaScript</h4>
+                         <span class="section-progress">0/3</span>
+                      </div>
+                      <div class="section-lessons" style="display: none;">
+                         <div class="lesson-item">
+                            <div class="lesson-status">
+                               <i class="fa fa-circle-o"></i>
+                            </div>
+                            <div class="lesson-info">
+                               <span class="lesson-title">Bài 13: Khai báo và sử dụng hàm</span>
+                               <span class="lesson-duration">30 phút</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="learning-content-area">
+                <div class="lesson-content">
+                   <div class="lesson-tabs">
+                      <button class="tab-button active" data-tab="content">Nội dung bài học</button>
+                      <button class="tab-button" data-tab="resources">Tài liệu</button>
+                      <button class="tab-button" data-tab="notes">Ghi chú</button>
+                   </div>
+                   <div class="tab-content" id="content-tab">
+                      <h2>Bài 3: Cú pháp cơ bản và cách chạy JavaScript</h2>
+                      <div class="lesson-description">
+                         <p>Trong bài học này, chúng ta sẽ tìm hiểu về cú pháp cơ bản của JavaScript và các cách để chạy mã JavaScript:</p>
+                         
+                         <h3>Cách thêm JavaScript vào trang web</h3>
+                         <p>Có ba cách chính để thêm JavaScript vào trang web:</p>
+                         
+                         <h4>1. Inline JavaScript</h4>
+                         <p>Thêm trực tiếp vào thuộc tính sự kiện của thẻ HTML:</p>
+                         <div class="code-example">
+                            <pre><code>&lt;button onclick="alert('Xin chào!');"&gt;Nhấn vào đây&lt;/button&gt;</code></pre>
+                         </div>
+                         
+                         <h4>2. Internal JavaScript</h4>
+                         <p>Sử dụng thẻ &lt;script&gt; trong trang HTML:</p>
+                         <div class="code-example">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Trang web của tôi&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Xin chào!&lt;/h1&gt;
+  
+  &lt;script&gt;
+    // Mã JavaScript ở đây
+    console.log("Xin chào từ JavaScript!");
+    document.write("Văn bản được tạo bởi JavaScript");
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                         </div>
+                         
+                         <h4>3. External JavaScript</h4>
+                         <p>Tạo file JavaScript riêng và liên kết vào trang HTML:</p>
+                         <div class="code-example">
+                            <pre><code>&lt;!-- Trong file HTML --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+// Trong file script.js
+console.log("Mã JavaScript từ file bên ngoài");
+alert("Xin chào từ file script.js!");</code></pre>
+                         </div>
+                         
+                         <h3>Cú pháp cơ bản của JavaScript</h3>
+                         
+                         <h4>Câu lệnh và dấu chấm phẩy</h4>
+                         <p>Mỗi câu lệnh JavaScript thường kết thúc bằng dấu chấm phẩy (;). Mặc dù JavaScript có thể tự động thêm dấu chấm phẩy trong nhiều trường hợp, nhưng việc thêm dấu chấm phẩy là một thói quen tốt:</p>
+                         <div class="code-example">
+                            <pre><code>let x = 5;           // Khai báo biến x và gán giá trị 5
+console.log(x);      // In giá trị của x ra console
+alert("Xin chào!");  // Hiển thị hộp thoại thông báo</code></pre>
+                         </div>
+                         
+                         <h4>Chú thích (Comments)</h4>
+                         <p>JavaScript hỗ trợ hai loại chú thích:</p>
+                         <div class="code-example">
+                            <pre><code>// Đây là chú thích một dòng
+
+/* Đây là chú thích
+ nhiều dòng */</code></pre>
+                         </div>
+                         
+                         <h4>Phân biệt chữ hoa chữ thường</h4>
+                         <p>JavaScript phân biệt chữ hoa và chữ thường. Điều này có nghĩa là các biến, hàm và từ khóa phải được viết chính xác:</p>
+                         <div class="code-example">
+                            <pre><code>let name = "John";  // Đúng
+let Name = "Jane";  // Biến khác, không phải 'name'
+let NAME = "Jim";   // Biến khác nữa
+
+// Các từ khóa phải viết đúng
+let myVariable = 10;  // Đúng
+Let myOtherVar = 20;  // Sai! 'Let' phải viết thường: 'let'</code></pre>
+                         </div>
+                         
+                         <h3>Công cụ để chạy và kiểm tra JavaScript</h3>
+                         
+                         <h4>Console trong trình duyệt</h4>
+                         <p>Cách đơn giản nhất để thử nghiệm JavaScript là sử dụng console của trình duyệt:</p>
+                         <ol>
+                            <li>Mở trình duyệt (Chrome, Firefox, Edge, v.v.)</li>
+                            <li>Nhấn F12 hoặc chuột phải vào trang web và chọn "Inspect" (Kiểm tra)</li>
+                            <li>Chuyển đến tab "Console"</li>
+                            <li>Nhập mã JavaScript và nhấn Enter để thực thi</li>
+                         </ol>
+                         
+                         <h4>Môi trường phát triển trực tuyến</h4>
+                         <p>Có nhiều trang web cho phép bạn viết và chạy JavaScript trực tuyến:</p>
+                         <ul>
+                            <li>JSFiddle (jsfiddle.net)</li>
+                            <li>CodePen (codepen.io)</li>
+                            <li>JS Bin (jsbin.com)</li>
+                         </ul>
+                         
+                         <h4>Node.js</h4>
+                         <p>Nếu bạn đã cài đặt Node.js, bạn có thể chạy JavaScript từ dòng lệnh:</p>
+                         <div class="code-example">
+                            <pre><code>// Lưu mã vào file example.js
+console.log("Hello from Node.js!");
+
+// Chạy từ terminal/command prompt
+// node example.js</code></pre>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-content" id="resources-tab" style="display: none;">
+                      <h3>Tài liệu bài học</h3>
+                      <div class="resources-list">
+                         <div class="resource-item">
+                            <i class="fa fa-file-pdf-o"></i>
+                            <span>Slide bài giảng - Cú pháp cơ bản JavaScript.pdf</span>
+                            <a href="#" class="download-button">Tải xuống</a>
+                         </div>
+                         <div class="resource-item">
+                            <i class="fa fa-file-code-o"></i>
+                            <span>Ví dụ mã nguồn - JavaScript cơ bản.zip</span>
+                            <a href="#" class="download-button">Tải xuống</a>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="tab-content" id="notes-tab" style="display: none;">
+                      <h3>Ghi chú của bạn</h3>
+                      <div class="notes-container">
+                         <textarea placeholder="Thêm ghi chú của bạn về bài học này..."></textarea>
+                         <button class="save-notes">Lưu ghi chú</button>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="lesson-navigation">
+             <a href="#" class="nav-button prev-button">
+                <i class="fa fa-arrow-left"></i> Bài trước
+             </a>
+             <a href="#" class="nav-button complete-button">
+                Đánh dấu hoàn thành
+             </a>
+             <a href="#" class="nav-button next-button">
+                Bài tiếp theo <i class="fa fa-arrow-right"></i>
+             </a>
+          </div>
+       </div>
+    </main>
+      </section>
+      <button id="go-to-top" title="Go to Top">Lên đầu trang</button>
+      </main>
+      <footer>
+         <div class="footer-container">
+            <div class="footer-column">
+               <h3>Thông tin liên hệ</h3>
+               <p>Địa chỉ: Huyện Ân Thi, Tỉnh Hưng Yên</p>
+               <p>
+                  Email:
+                  <a href="mailto:nguyenvanthangktpm@gmail.com">info@myscourse.com</a>
+               </p>
+               <p>Điện thoại: <a href="tel:+84387753585">+84 387 753 585 </a></p>
+            </div>
+            <div class="footer-column">
+               <h3>Liên kết nhanh</h3>
+               <ul>
+                  <li><a href="../index.html">Trang chủ</a></li>
+                  <li><a href="#">Khóa học</a></li>
+                  <li><a href="./AboutUs.html">Giới thiệu</a></li>
+                  <li><a href="#">Liên hệ</a></li>
+               </ul>
+            </div>
+            <div class="footer-column">
+               <h3>Theo dõi chúng tôi</h3>
+               <div class="social-icons">
+                  <a href="https://www.facebook.com/thangnguyen.elnino"
+                     ><i class="fa fa-facebook-f"></i
+                     ></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a
+                     href="https://www.linkedin.com/in/th%E1%BA%AFng-nguy%E1%BB%85n-v%C4%83n-b8582a355/"
+                     ><i class="fa fa-linkedin"></i
+                     ></a>
+                  <a href="https://www.youtube.com/@ThangSanZaii"
+                     ><i class="fa fa-youtube-play"></i
+                     ></a>
+               </div>
+            </div>
+            <div class="footer-column">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29824.475903756727!2d106.07413374265639!3d20.86965236781047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135bcc2150e5e7b%3A0x886e405adc5ef92!2zQuG6r2MgU8ahbiwgw4JuIFRoaSwgSMawbmcgWcOqbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1743960742401!5m2!1svi!2s"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+            </div>
+         </div>
+         <div class="copyright">
+            <p>&copy; 2025 My's Course. All rights reserved.</p>
+         </div>
+         <script src="../JS/Home.js"></script>
+         <script>
+            $(document).ready(function () {
+            $(".tab-button").on("click", function () {
+            $(".tab-button").removeClass("active"); 
+            $(this).addClass("active");
+            
+            const tabId = $(this).data("tab") + "-tab";
+            $(".tab-content").hide();
+            $("#" + tabId).show();
+            });
+            
+            $(".section-title").on("click", function () {
+            const icon = $(this).find("i"); 
+            const lessons = $(this).next(".section-lessons"); 
+            
+            if (lessons.is(":visible")) {
+            lessons.slideUp(); 
+            icon.removeClass("fa-chevron-down").addClass("fa-chevron-right"); 
+            } else {
+            lessons.slideDown(); 
+            icon.removeClass("fa-chevron-right").addClass("fa-chevron-down"); 
+            }
+            });
+            });
+         </script>
+      </footer>
+   </body>
+</html>
