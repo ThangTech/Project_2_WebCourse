@@ -98,22 +98,6 @@ $(document).ready(function () {
     }
   });
 });
-$(document).ready(function () {
-  function isLoggedIn() {
-    const user = localStorage.getItem("auth");
-    return user !== null;
-  }
-  $("#search-button").on("click", function (event) {
-    event.preventDefault();
-    if (!isLoggedIn()) {
-      alert("Bạn cần đăng nhập để tiếp tục!");
-      window.location.href = "./Home/Login.html";
-    } else {
-      const courseLink = $(this).attr("href");
-      window.location.href = courseLink;
-    }
-  });
-});
 //Xử lí sự kiện tìm kiếm
 $(document).ready(function () {
   // Function to show search results
@@ -132,7 +116,6 @@ $(document).ready(function () {
       const $card = $(this);
       const courseName = $card.data("course-name").toLowerCase();
       const courseLink = $card.find(".btn-primary").attr("href") || "#";
-
       if (courseName.includes(searchTerm)) {
         matchCount++;
         courseData.push({
