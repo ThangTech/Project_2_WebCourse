@@ -98,3 +98,86 @@ $(document).ready(function () {
     }
   });
 });
+$(document).ready(function () {
+  function isLoggedIn() {
+    const user = localStorage.getItem("auth");
+    return user !== null;
+  }
+  $("#search-button").on("click", function (event) {
+    event.preventDefault();
+    if (!isLoggedIn()) {
+      alert("Bạn cần đăng nhập để tiếp tục!");
+      window.location.href = "./Home/Login.html";
+    } else {
+      const courseLink = $(this).attr("href");
+      window.location.href = courseLink;
+    }
+  });
+});
+//Xử lí sự kiện tìm kiếm
+$(document).ready(function () {
+  // Function to show search results
+  function showSearchResults(searchInput) {
+    const searchTerm = searchInput.toLowerCase().trim();
+    const $searchResults = $("#search-results");
+    $searchResults.empty();
+    if (searchTerm === "") {
+      $searchResults.hide();
+      $(".course-card").show();
+      return;
+    }
+    let matchCount = 0;
+    const courseData = [];
+    $(".course-card").each(function () {
+      const $card = $(this);
+      const courseName = $card.data("course-name").toLowerCase();
+      const courseLink = $card.find(".btn-primary").attr("href") || "#";
+
+      if (courseName.includes(searchTerm)) {
+        matchCount++;
+        courseData.push({
+          name: $card.data("course-name"),
+          link: courseLink,
+        });
+        $card.show();
+      } else {
+        $card.hide();
+      }
+    });
+    if (matchCount > 0) {
+      courseData.forEach((course) => {
+        $searchResults.append(
+          `<div class="search-result-item" data-link="${course.link}">${course.name}</div>`
+        );
+      });
+      $searchResults.show();
+    } else {
+      $searchResults.append(
+        '<div class="no-results">Không tìm thấy khóa học phù hợp</div>'
+      );
+      $searchResults.show();
+    }
+  }
+  $("#search-button").on("click", function (e) {
+    e.preventDefault();
+    const searchInput = $("#search-input").val();
+    showSearchResults(searchInput);
+  });
+  $("#search-input").on("keyup", function (e) {
+    if (e.key === "Enter") {
+      const searchInput = $(this).val();
+      showSearchResults(searchInput);
+    }
+  });
+  $(document).on("click", ".search-result-item", function () {
+    const link = $(this).data("link");
+    if (link && link !== "#") {
+      window.location.href = link;
+    }
+  });
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".search, .search-results").length) {
+      $("#search-results").hide();
+    }
+  });
+});

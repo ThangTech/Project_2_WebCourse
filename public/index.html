@@ -102,12 +102,16 @@
       <div class="search">
         <input
           type="search"
+          id="search-input"
           placeholder="Tìm kiếm khóa học"
           required
         />
-        <button type="submit">
+        <button type="submit" id="search-button">
           <img src="./Stograge/Images/Home/search.jpg" alt="Search Icon" />
         </button>
+        <div class="search-results" id="search-results">
+              
+       </div>
       </div>
       <div class="actions">
         <div class="cart">
@@ -164,7 +168,7 @@
           >
         </div>
         <div class="course-grid">
-          <div class="course-card">
+          <div class="course-card" data-course-name="HTML & CSS cơ bản">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/htmlcss.jpg"
@@ -197,7 +201,7 @@
               </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="JavaScript cơ bản">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/js.jpg"
@@ -231,7 +235,7 @@
               
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Python cơ bản">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/py.jpg"
@@ -264,7 +268,7 @@
               </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Git & GitHub cơ bản">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/git.jpg"
@@ -307,7 +311,7 @@
           >
         </div>
         <div class="course-grid">
-          <div class="course-card">
+          <div class="course-card" data-course-name="React">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/react1.jpg"
@@ -345,7 +349,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="NodeJS cơ bản">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/node.jpg" alt="Node.js" />
               <div class="course-badge bestseller">Bán chạy</div>
@@ -380,7 +384,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Flutter cơ bản">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/flut1.jpg" alt="Flutter" />
               <div class="course-badge bestseller">Bán chạy</div>
@@ -415,7 +419,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Python Data Science">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/py1.jpg"
@@ -463,7 +467,7 @@
           >
         </div>
         <div class="course-grid">
-          <div class="course-card">
+          <div class="course-card" data-course-name="Angular nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/an.jpg" alt="Angular" />
               <div class="course-badge deal">-70%</div>
@@ -498,7 +502,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Docker nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/doc.jpg" alt="Docker" />
               <div class="course-badge deal">-70%</div>
@@ -533,7 +537,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="AWS nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/aws.jpg" alt="AWS" />
               <div class="course-badge deal">-70%</div>
@@ -568,7 +572,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Vue.js nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/vue.jpg" alt="Vue.js" />
               <div class="course-badge deal">-70%</div>
@@ -613,7 +617,7 @@
           >
         </div>
         <div class="course-grid">
-          <div class="course-card">
+          <div class="course-card" data-course-name="TypeScript nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/ty.jpg" alt="TypeScript" />
               <div class="course-badge popular">Hot</div>
@@ -648,7 +652,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Next.js nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/next.jpg" alt="Next.js" />
               <div class="course-badge popular">Hot</div>
@@ -683,7 +687,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="GraphQL nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/gra.jpg" alt="GraphQL" />
               <div class="course-badge popular">Hot</div>
@@ -718,7 +722,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Tailwind CSS nâng cao">
             <div class="course-image">
               <img
                 src="./Stograge/Images/Homecard/tai.jpg"
@@ -766,7 +770,7 @@
           >
         </div>
         <div class="course-grid">
-          <div class="course-card">
+          <div class="course-card" data-course-name="Svelte nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/sve.jpg" alt="Svelte" />
               <div class="course-badge new">Mới</div>
@@ -801,7 +805,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Rust nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/rust.jpg" alt="Rust" />
               <div class="course-badge new">Mới</div>
@@ -836,7 +840,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Golang nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/go.jpg" alt="Go" />
               <div class="course-badge new">Mới</div>
@@ -871,7 +875,7 @@
                    </div>
             </div>
           </div>
-          <div class="course-card">
+          <div class="course-card" data-course-name="Three.js nâng cao">
             <div class="course-image">
               <img src="./Stograge/Images/Homecard/three.jpg" alt="Three.js" />
               <div class="course-badge new">Mới</div>
