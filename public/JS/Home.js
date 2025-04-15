@@ -98,7 +98,7 @@ $(document).ready(function () {
     }
   });
 });
-$(document).ready(function () {
+/* $(document).ready(function () {
   function isLoggedIn() {
     const user = localStorage.getItem("auth");
     return user !== null;
@@ -113,25 +113,28 @@ $(document).ready(function () {
       window.location.href = courseLink;
     }
   });
-});
+}); */
 //Xử lí sự kiện tìm kiếm
-$(document).ready(function () {
-  // Function to show search results
+$(document).ready(() => {
   function showSearchResults(searchInput) {
     const searchTerm = searchInput.toLowerCase().trim();
     const $searchResults = $("#search-results");
     $searchResults.empty();
+
     if (searchTerm === "") {
       $searchResults.hide();
       $(".course-card").show();
       return;
     }
+
     let matchCount = 0;
     const courseData = [];
+
     $(".course-card").each(function () {
       const $card = $(this);
       const courseName = $card.data("course-name").toLowerCase();
       const courseLink = $card.find(".btn-primary").attr("href") || "#";
+
       if (courseName.includes(searchTerm)) {
         matchCount++;
         courseData.push({
@@ -143,6 +146,7 @@ $(document).ready(function () {
         $card.hide();
       }
     });
+
     if (matchCount > 0) {
       courseData.forEach((course) => {
         $searchResults.append(
@@ -157,24 +161,28 @@ $(document).ready(function () {
       $searchResults.show();
     }
   }
-  $("#search-button").on("click", function (e) {
-    e.preventDefault();
+  $("#search-button").on("click", (e) => {
+    e.preventDefault(); 
     const searchInput = $("#search-input").val();
     showSearchResults(searchInput);
   });
+
   $("#search-input").on("keyup", function (e) {
     if (e.key === "Enter") {
+      e.preventDefault();
       const searchInput = $(this).val();
       showSearchResults(searchInput);
     }
   });
+
   $(document).on("click", ".search-result-item", function () {
     const link = $(this).data("link");
     if (link && link !== "#") {
       window.location.href = link;
     }
   });
-  $(document).on("click", function (e) {
+
+  $(document).on("click", (e) => {
     if (!$(e.target).closest(".search, .search-results").length) {
       $("#search-results").hide();
     }
