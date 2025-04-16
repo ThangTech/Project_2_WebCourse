@@ -21,6 +21,24 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
+  let user = localStorage.getItem("auth");
+  if (user) {
+    let parsedUser = JSON.parse(user);
+    $("#mobile-welcome").html("Xin chào, " + parsedUser.name);
+    $("#mobile-user-info").removeClass("hidden");
+    $(".mobile-login-link").hide();
+    $(".mobile-register-link").hide();
+  } else {
+    $(".mobile-login-link").show();
+    $(".mobile-register-link").show();
+    $("#mobile-user-info").addClass("hidden");
+  }
+  $("#mobile-logout").on("click", function () {
+    localStorage.removeItem("auth");
+    window.location.reload();
+  });
+});
+$(document).ready(function () {
   let showGoToTop = 1300;
   $(window).scroll(function () {
     if ($(this).scrollTop() >= showGoToTop) {
