@@ -162,7 +162,7 @@ $(document).ready(() => {
     }
   }
   $("#search-button").on("click", (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const searchInput = $("#search-input").val();
     showSearchResults(searchInput);
   });
@@ -185,6 +185,25 @@ $(document).ready(() => {
   $(document).on("click", (e) => {
     if (!$(e.target).closest(".search, .search-results").length) {
       $("#search-results").hide();
+    }
+  });
+});
+$(document).ready(function () {
+  $("#mobile-menu-button").on("click", function () {
+    $("#mobile-menu-overlay").addClass("active");
+    $("body").css("overflow", "hidden");
+  });
+  $("#mobile-menu-close").on("click", function () {
+    $("#mobile-menu-overlay").removeClass("active");
+    $("body").css("overflow", "");
+  });
+  $("#mobile-search-close").on("click", function () {
+    $(".mobile-search-container").css("display", "none");
+  });
+  $(window).on("resize", function () {
+    if ($(window).width() > 768) {
+      $("#mobile-menu-overlay").removeClass("active");
+      $("body").css("overflow", "");
     }
   });
 });
