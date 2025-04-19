@@ -1,0 +1,122 @@
+{
+  "freeTrial": [
+    {
+      "name": "HTML & CSS cơ bản",
+      "image": "./Stograge/Images/Homecard/htmlcss.jpg",
+      "instructor": "Nguyễn Văn Công",
+      "instructorImage": "./Stograge/Images/Instructor/in1.jpg",
+      "description": "HTML & CSS cơ bản cho người mới bắt đầu",
+      "rating": 5,
+      "ratingCount": 156,
+      "lessons": 15,
+      "duration": "6 giờ",
+      "studyLink": "./Home/studyNow1.html",
+      "detailsLink": "./Home/details1.html"
+    },
+    {
+      "name": "JavaScript cơ bản",
+      "image": "./Stograge/Images/Homecard/js.jpg",
+      "instructor": "Trần Thị Phương",
+      "instructorImage": "./Stograge/Images/Instructor/in2.jpg",
+      "description": "JavaScript cơ bản - Làm quen với lập trình",
+      "rating": 4.5,
+      "ratingCount": 98,
+      "lessons": 12,
+      "duration": "5 giờ",
+      "studyLink": "./Home/studyNow2.html",
+      "detailsLink": "./Home/details2.html"
+    },
+    {
+      "name": "Python cơ bản",
+      "image": "./Stograge/Images/Homecard/py.jpg",
+      "instructor": "Lê Văn Mai",
+      "instructorImage": "./Stograge/Images/Instructor/in3.jpg",
+      "description": "Python nhập môn - Từ con số 0",
+      "rating": 5,
+      "ratingCount": 210,
+      "lessons": 18,
+      "duration": "7 giờ",
+      "studyLink": "./Home/studyNow3.html",
+      "detailsLink": "./Home/details3.html"
+    },
+    {
+      "name": "Git & GitHub cơ bản",
+      "image": "./Stograge/Images/Homecard/git.jpg",
+      "instructor": "Phạm Văn Dương",
+      "instructorImage": "./Stograge/Images/Instructor/in4.jpg",
+      "description": "Git & GitHub cho lập trình viên",
+      "rating": 4.5,
+      "ratingCount": 87,
+      "lessons": 10,
+      "duration": "4 giờ",
+      "studyLink": "./Home/studyNow4.html",
+      "detailsLink": "./Home/details4.html"
+    }
+  ],
+  "bestseller": [
+    {
+      "name": "React",
+      "image": "./Stograge/Images/Homecard/react1.jpg",
+      "instructor": "Nguyễn Di Đan",
+      "instructorImage": "./Stograge/Images/Instructor/đian.jpg",
+      "description": "React.js - Từ cơ bản đến thành thạo",
+      "rating": 5,
+      "ratingCount": 325,
+      "lessons": 45,
+      "duration": "20 giờ",
+      "price": "799.000đ",
+      "originalPrice": "1.599.000đ",
+      "discount": "-50%",
+      "studyLink": "./Home/cart5.html",
+      "detailsLink": "./Home/details5.html"
+    },
+    {
+      "name": "NodeJS cơ bản",
+      "image": "./Stograge/Images/Homecard/node.jpg",
+      "instructor": "Ngô Thị Phan",
+      "instructorImage": "./Stograge/Images/Instructor/in5.jpg",
+      "description": "Node.js, Express & MongoDB - Backend hoàn chỉnh",
+      "rating": 5,
+      "ratingCount": 278,
+      "lessons": 38,
+      "duration": "18 giờ",
+      "price": "699.000đ",
+      "originalPrice": "1.399.000đ",
+      "discount": "-50%",
+      "studyLink": "./Home/cart6.html",
+      "detailsLink": "./Home/details6.html"
+    },
+    {
+      "name": "Flutter cơ bản",
+      "image": "./Stograge/Images/Homecard/flut1.jpg",
+      "instructor": "Trần Thị Phương",
+      "instructorImage": "./Stograge/Images/Instructor/in2.jpg",
+      "description": "Flutter - Phát triển ứng dụng di động đa nền tảng",
+      "rating": 4.5,
+      "ratingCount": 196,
+      "lessons": 42,
+      "duration": "22 giờ",
+      "price": "899.000đ",
+      "originalPrice": "1.799.000đ",
+      "discount": "-50%",
+      "studyLink": "./Home/cart7.html",
+      "detailsLink": "./Home/details7.html"
+    },
+    {
+      "name": "Python Data Science",
+      "image": "./Stograge/Images/Homecard/py1.jpg",
+      "instructor": "Nguyễn Di Đan",
+      "instructorImage": "./Stograge/Images/Instructor/đian.jpg",
+      "description": "Python cho Data Science và Machine Learning",
+      "rating": 5,
+      "ratingCount": 412,
+      "lessons": 50,
+      "duration": "25 giờ",
+      "price": "999.000đ",
+      "originalPrice": "1.999.000đ",
+      "discount": "-50%",
+      "studyLink": "./Home/cart8.html",
+      "detailsLink": "./Home/details8.html"
+    }
+  ]
+}

@@ -151,3 +151,90 @@ $(document).ready(function () {
     }
   });
 });
+
+// Hiển thị sản phẩm học thử miễn phí và bán chạy nhất
+$(document).ready(function () {
+  $.getJSON("./data/course.json", function (data) {
+    const bestsellerCourses = data.bestseller;
+    const freeTrialCourses = data.freeTrial;
+
+    // Populate bestseller section
+    const bestsellerGrid = $(".bestseller-section .course-grid");
+    bestsellerCourses.forEach((course) => {
+      const courseCard = `
+        <div class="course-card" data-course-name="${course.name}">
+          <div class="course-image">
+            <img src="${course.image}" alt="${course.name}" />
+            <div class="course-badge bestseller">Bán chạy</div>
+          </div>
+          <div class="course-content">
+            <div class="course-instructor">
+              <img src="${course.instructorImage}" alt="${course.instructor}" />
+              <span>${course.instructor}</span>
+            </div>
+            <h3>${course.description}</h3>
+            <div class="course-rating">
+              <span class="stars">${"★".repeat(course.rating)}${"☆".repeat(
+        5 - course.rating
+      )}</span>
+              <span class="rating-count">(${course.ratingCount})</span>
+            </div>
+            <div class="course-info">
+              <span>${course.lessons} bài học</span>
+              <span>${course.duration}</span>
+            </div>
+            <div class="course-price">
+              <span class="current-price">${course.price}</span>
+              <span class="original-price">${course.originalPrice}</span>
+              <span class="discount">${course.discount}</span>
+            </div>
+            <div class="course-action">
+              <a href="${course.studyLink}" class="btn btn-primary">Học ngay</a>
+              <a href="${
+                course.detailsLink
+              }" class="btn-details">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>`;
+      bestsellerGrid.append(courseCard);
+    });
+
+    // Populate free trial section
+    const freeTrialGrid = $(".free-trial-section .course-grid");
+    freeTrialCourses.forEach((course) => {
+      const courseCard = `
+        <div class="course-card" data-course-name="${course.name}">
+          <div class="course-image">
+            <img src="${course.image}" alt="${course.name}" />
+            <div class="course-badge free">Miễn phí</div>
+          </div>
+          <div class="course-content">
+            <div class="course-instructor">
+              <img src="${course.instructorImage}" alt="${course.instructor}" />
+              <span>${course.instructor}</span>
+            </div>
+            <h3>${course.description}</h3>
+            <div class="course-rating">
+              <span class="stars">${"★".repeat(course.rating)}${"☆".repeat(
+        5 - course.rating
+      )}</span>
+              <span class="rating-count">(${course.ratingCount})</span>
+            </div>
+            <div class="course-info">
+              <span>${course.lessons} bài học</span>
+              <span>${course.duration}</span>
+            </div>
+            <div class="course-action">
+              <a href="${course.studyLink}" class="btn btn-primary">Học ngay</a>
+              <a href="${
+                course.detailsLink
+              }" class="btn-details">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>`;
+      freeTrialGrid.append(courseCard);
+    });
+  }).fail(function () {
+    console.error("Error loading course data.");
+  });
+});

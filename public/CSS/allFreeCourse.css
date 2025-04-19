@@ -1,890 +1,889 @@
 * {
-       box-sizing: border-box;
-     }
-     header {
-       display: flex;
-       align-items: center;
-       padding: 0 20px;
-       width: 100%;
-       height: 150px;
-     }
-     
-     .logo {
-       display: flex;
-       align-items: center;
-     }
-     
-     .logo img {
-       width: 100px;
-       height: auto;
-       margin-right: 20px;
-     }
-     
-     .category {
-       position: relative;
-     }
-     
-     .category-trigger {
-       display: flex;
-       align-items: center;
-       cursor: pointer;
-     }
-     
-     .category img {
-       width: 30px;
-       height: 30px;
-       margin-right: 10px;
-     }
-     
-     .category h3 {
-       font-weight: normal;
-       font-size: 20px;
-       font-family: Arial, sans-serif;
-     }
-     
-     .category-dropdown {
-       display: none;
-       position: absolute;
-       top: 100%;
-       left: 0;
-       width: 800px;
-       background-color: white;
-       border: 1px solid #e0e0e0;
-       border-radius: 4px;
-       z-index: 1000;
-       padding: 20px;
-       margin-top: 10px;
-     }
-     
-     .category:hover .category-dropdown {
-       display: block;
-     }
-     
-     .dropdown-content {
-       display: flex;
-       flex-wrap: wrap;
-       margin-top: -30px;
-     }
-     
-     .dropdown-category {
-       width: 50%;
-       padding-right: 15px;
-       margin-bottom: 20px;
-     }
-     
-     .dropdown-category h4 {
-       font-size: 16px;
-       color: #333;
-       margin-bottom: 10px;
-       padding-bottom: 5px;
-       border-bottom: 1px solid #eee;
-     }
-     
-     .dropdown-category ul {
-       list-style: none;
-       padding: 0;
-       margin: 0;
-     }
-     
-     .dropdown-category ul li {
-       margin-bottom: 8px;
-     }
-     
-     .dropdown-category ul li a {
-       text-decoration: none;
-       color: #555;
-       font-size: 14px;
-       display: block;
-       padding: 3px 0;
-       transition: color 0.5s;
-     }
-     
-     .dropdown-category ul li a:hover {
-       color: darkblue;
-       text-decoration: underline;
-     }
-     
-     .dropdown-footer {
-       margin-top: 15px;
-       padding-top: 10px;
-       border-top: 1px solid #eee;
-       text-align: right;
-       clear: both;
-     }
-     
-     .dropdown-footer a {
-       color: darkblue;
-       text-decoration: none;
-       font-size: 14px;
-       font-weight: bold;
-     }
-     
-     .dropdown-footer a:hover {
-       text-decoration: underline;
-     }
-     
-     .search {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-       margin-left: 30px;
-       position: relative;
-       width: 500px;
-     }
-     
-     .search input[type="search"] {
-       width: 100%;
-       padding: 10px 40px 10px 10px;
-       border: 1px solid #ccc;
-       border-radius: 20px;
-       font-size: 14px;
-     }
-     
-     .search button {
-       position: absolute;
-       top: 5px;
-       right: 10px;
-       background: none;
-       border: none;
-       padding: 0;
-       cursor: pointer;
-       height: 30px;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-     }
-     
-     .search button img {
-       width: 20px;
-       height: 20px;
-     }
-     .cart img {
-       width: 20px;
-       height: 20px;
-       margin-right: 10px;
-     }
-     
-     .actions {
-       display: flex;
-       gap: 10px;
-       right: 20px;
-       position: absolute;
-     }
-     
-     .actions .cart button {
-       display: flex;
-       align-items: center;
-       gap: 5px;
-       padding: 10px 10px;
-       border: none;
-       color: black;
-       font-size: 14px;
-       cursor: pointer;
-       text-decoration: none;
-       background-color: white;
-     }
-     
-     .actions .cart button:hover {
-       color: blue;
-     }
-     
-     .actions .login button {
-       padding: 5px 10px;
-       border: none;
-       background-color: white;
-       color: black;
-       font-size: 14px;
-       cursor: pointer;
-       text-decoration: none;
-       width: 100px;
-       height: 40px;
-     }
-     
-     .actions .login button:hover {
-       background-color: #f0f0f0;
-     }
-     
-     .actions .register button {
-       padding: 5px 10px;
-       border: none;
-       border-radius: 5px;
-       background-color: blue;
-       color: white;
-       font-size: 14px;
-       cursor: pointer;
-       text-decoration: none;
-       width: 100px;
-       height: 40px;
-     }
-     
-     .actions .register button:hover {
-       background-color: darkblue;
-     }
-     
-     .actions a {
-       text-decoration: none;
-       color: inherit;
-     }
-     .auth {
-       display: flex;
-       gap: 10px;
-     }
-     
-     #user-info {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-       padding: 5px 10px;
-       border: none;
-       background-color: white;
-       color: black;
-       font-size: 14px;
-       cursor: pointer;
-       text-decoration: none;
-       border-radius: 5px;
-     }
-     .hidden {
-       display: none;
-     }
-     
-     #user-info #btn-logout {
-       padding: 5px 10px;
-       border: none;
-       background-color: blue;
-       color: white;
-       font-size: 14px;
-       cursor: pointer;
-       border-radius: 5px;
-     }
-     
-     #user-info #btn-logout:hover {
-       background-color: darkblue;
-     }
-     
-     .menu {
-       display: flex;
-       justify-content: center;
-       background-color: darkblue;
-       padding: 0;
-       margin-top: 10px;
-       width: 100%;
-       box-sizing: border-box;
-     }
-     
-     .menu ul {
-       display: flex;
-       justify-content: space-around;
-       list-style: none;
-       padding: 0;
-       margin: 0;
-       width: 100%;
-     }
-     
-     .menu li {
-       flex: 1;
-       text-align: center;
-     }
-     
-     .menu a {
-       color: white;
-       text-decoration: none;
-       font-size: 16px;
-       font-weight: normal;
-       padding: 10px 20px;
-       display: block;
-       font-family: Arial, sans-serif;
-       white-space: nowrap;
-     }
-     
-     .menu a:hover {
-       background-color: aqua;
-     }
-     
-     .main-content {
-       padding: 30px 20px;
-       background-color: #f5f7fa;
-     }
-     .slider {
-       position: relative;
-       width: 100%;
-       margin: auto;
-       overflow: hidden;
-       text-align: center;
-     }
-     .slider img {
-       width: 70%;
-       padding-top: 10px;
-       display: none;
-       margin: 0 auto;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-     img.displaySlide {
-       display: block;
-     }
-     .slider button {
-       position: absolute;
-       top: 50%;
-       transform: translateX(-50%);
-       font-size: 40px;
-       border: none;
-       cursor: pointer;
-     }
-     .prev {
-       left: 216px;
-     }
-     .next {
-       right: 183px;
-     }
-     .btn-details {
-       display: inline-block;
-       padding: 8px 15px;
-       background-color: #f5f5f5;
-       border: 1px solid #e0e0e0;
-       border-radius: 4px;
-       color: #555;
-       text-decoration: none;
-       font-size: 14px;
-       font-weight: bold;
-       text-align: center;
-       cursor: pointer;
-       transition: background-color 0.3s, color 0.3s;
-     }
-     
-     .btn-details:hover {
-       background-color: #e9e9e9;
-       color: #333;
-     }
-     
-     .course-section {
-       margin-bottom: 50px;
-       background-color: white;
-       border-radius: 8px;
-       padding: 25px;
-       box-shadow: 0 1px 3px #e0e0e0;
-     }
-     
-     .section-header {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       margin-bottom: 25px;
-       padding-bottom: 15px;
-       border-bottom: 1px solid #eee;
-     }
-     
-     .section-header h2 {
-       font-size: 24px;
-       color: #333;
-       margin: 0;
-     }
-     
-     .view-all-link {
-       color: blue;
-       text-decoration: none;
-       font-size: 14px;
-       font-weight: 500;
-       display: flex;
-       align-items: center;
-       cursor: pointer;
-     }
-     
-     .view-all-link:hover {
-       text-decoration: underline;
-     }
-     
-     .view-all-link .arrow {
-       margin-left: 5px;
-       transition: transform 0.3s;
-     }
-     
-     .view-all-link:hover .arrow {
-       transform: translateX(3px);
-     }
-     
-     .course-grid {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 20px;
-     }
-     
-     .course-card {
-       width: 23%;
-       background-color: white;
-       border-radius: 8px;
-       overflow: hidden;
-       box-shadow: 0 1px 4px #d1d1d1;
-       transition: transform 0.3s, box-shadow 0.3s;
-       display: flex;
-       flex-direction: column;
-       cursor: pointer;
-     }
-     
-     .course-card:hover {
-       transform: translateY(-5px);
-       box-shadow: 0 4px 8px #c0c0c0;
-     }
-     
-     .course-image {
-       position: relative;
-       height: 160px;
-     }
-     
-     .course-image img {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-     }
-     
-     .course-badge {
-       position: absolute;
-       top: 10px;
-       right: 10px;
-       padding: 5px 10px;
-       border-radius: 4px;
-       font-size: 12px;
-       font-weight: bold;
-       color: white;
-     }
-     
-     .course-badge.free {
-       background-color: #2ecc71;
-     }
-     
-     .course-badge.bestseller {
-       background-color: #f39c12;
-     }
-     
-     .course-badge.deal {
-       background-color: #e74c3c;
-     }
-     
-     .course-badge.popular {
-       background-color: #9b59b6;
-     }
-     
-     .course-badge.new {
-       background-color: #3498db;
-     }
-     
-     .course-content {
-       padding: 15px;
-       display: flex;
-       flex-direction: column;
-       flex-grow: 1;
-     }
-     
-     .course-instructor {
-       display: flex;
-       align-items: center;
-       margin-bottom: 10px;
-     }
-     
-     .course-instructor img {
-       width: 40px;
-       height: 40px;
-       border-radius: 50%;
-       margin-right: 10px;
-     }
-     
-     .course-instructor span {
-       font-size: 14px;
-       color: #666;
-     }
-     
-     .course-content h3 {
-       font-size: 16px;
-       margin-bottom: 10px;
-       color: #333;
-       line-height: 1.4;
-       flex-grow: 1;
-     }
-     
-     .course-rating {
-       margin-bottom: 10px;
-     }
-     .main-content {
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-          }
-          .about-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px;
-            padding: 30px;
-          }
-          
-          .page-title {
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-          }
-          
-          .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-          }
-          
-          .about-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px;
-          }
-          
-          .about-text {
-            flex: 1;
-          }
-          .about-text h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-          }
-     
-          .about-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-          }
-          .stats-section {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 30px;
-            gap: 20px;
-          }
-          
-          .stat-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px;
-          }
-          
-          .stat-number {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-          }
-          
-          .stat-label {
-            font-size: 16px;
-            color: #777;
-            margin-top: 5px;
-          }
-     .stars {
-       color: #f9ca24;
-       letter-spacing: 2px;
-     }
-     
-     .rating-count {
-       color: #666;
-       font-size: 14px;
-       margin-left: 5px;
-     }
-     
-     .course-info {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 10px;
-       margin-bottom: 15px;
-       font-size: 13px;
-       color: #666;
-     }
-     
-     .course-price {
-       display: flex;
-       align-items: center;
-       flex-wrap: wrap;
-       gap: 8px;
-     }
-     
-     .current-price {
-       font-size: 18px;
-       font-weight: bold;
-       color: #333;
-     }
-     
-     .original-price {
-       font-size: 14px;
-       color: #999;
-       text-decoration: line-through;
-     }
-     
-     .discount {
-       background-color: #e74c3c;
-       color: white;
-       padding: 3px 6px;
-       border-radius: 4px;
-       font-size: 12px;
-       font-weight: bold;
-     }
-     
-     .course-action {
-       margin-top: 15px;
-       display: flex;
-       align-items: center;
-       gap : 10px;
-     }
-     
-     .btn {
-       display: inline-block;
-       padding: 8px 15px;
-       border-radius: 5px;
-       font-weight: bold;
-       text-decoration: none;
-       text-align: center;
-       transition: all 0.3s;
-       cursor: pointer;
-     }
-     
-     .btn-primary {
-       background-color: blue;
-       color: white;
-       border: none;
-       width: 100%;
-       flex: 1;
-     }
-     
-     .btn-primary:hover {
-       background-color: darkblue;
-     }
-     
-     .free-trial-section {
-       border-top: 3px solid #2ecc71;
-     }
-     
-     .bestseller-section {
-       border-top: 3px solid #f39c12;
-     }
-     
-     .deals-section {
-       border-top: 3px solid #e74c3c;
-     }
-     
-     .popular-section {
-       border-top: 3px solid #9b59b6;
-     }
-     
-     .new-section {
-       border-top: 3px solid #3498db;
-     }
-     #go-to-top {
-       position: fixed;
-       bottom: 20px;
-       right: 20px;
-       width: 80px;
-       height: 40px;
-       background-color: white;
-       color: black;
-       border: none;
-       font-size: 16px;
-       cursor: pointer;
-       box-shadow: 0 4px 6px;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       z-index: 1000;
-       border-radius: 5px;
-       display: none;
-     }
-     #go-to-top:hover {
-       opacity: 1;
-       transform: translateY(-3px);
-     }
-     /* Footer Styles */
-     footer {
-       background-color: darkblue;
-       color: white;
-       padding: 40px 20px;
-       font-size: 14px;
-     }
-     
-     footer .footer-container {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: space-between;
-       gap: 20px;
-     }
-     
-     footer .footer-column {
-       flex: 1;
-       min-width: 250px;
-     }
-     
-     footer h3 {
-       color: #f39c12;
-       margin-bottom: 15px;
-       font-size: 18px;
-     }
-     
-     footer p,
-     footer a {
-       color: white;
-       text-decoration: none;
-       font-size: 14px;
-       line-height: 1.6;
-     }
-     
-     footer a:hover {
-       color: #f39c12;
-       text-decoration: underline;
-     }
-     
-     footer ul {
-       list-style: none;
-       padding: 0;
-       margin: 0;
-     }
-     
-     footer ul li {
-       margin-bottom: 10px;
-     }
-     
-     footer ul li a {
-       color: white;
-       text-decoration: none;
-       font-size: 14px;
-     }
-     
-     footer ul li a:hover {
-       color: #f39c12;
-       text-decoration: underline;
-     }
-     
-     footer .social-icons {
-       display: flex;
-       gap: 25px;
-     }
-     
-     footer .social-icons a img {
-       width: 24px;
-       height: 24px;
-       transition: transform 0.3s;
-     }
-     
-     footer .social-icons a:hover {
-       transform: translateY(-3px);
-     }
-     .social-icons a {
-       font-size: 20px;
-     }
-     
-     footer iframe {
-       border: none;
-       border-radius: 8px;
-       width: 100%;
-       height: 200px;
-     }
-     
-     footer .copyright {
-       text-align: center;
-       margin-top: 20px;
-       border-top: 1px solid #555;
-       padding-top: 10px;
-       font-size: 12px;
-       color: #aaa;
-     }
-     
-     /* Responsive Styles */
-     @media (max-width: 1200px) {
-       .course-card {
-         width: 31%;
-       }
-     }
-     
-     @media (max-width: 992px) {
-       .course-card {
-         width: 47%;
-       }
-     
-       .course-section {
-         padding: 20px;
-       }
-     }
-     
-     @media (max-width: 768px) {
-       .course-card {
-         width: 100%;
-       }
-     
-       .section-header {
-         flex-direction: column;
-         align-items: flex-start;
-         gap: 10px;
-       }
-     
-       .course-section {
-         padding: 15px;
-       }
-     }
-     
-     @media (max-width: 576px) {
-       .main-content {
-         padding: 15px 10px;
-       }
-     
-       .course-image {
-         height: 140px;
-       }
-     
-       .course-content h3 {
-         font-size: 15px;
-       }
-     }
-     /* Responsive styles */
-     @media (max-width: 1200px) {
-       .category-dropdown {
-         width: 700px;
-       }
-     }
-     
-     @media (max-width: 992px) {
-       .category-dropdown {
-         width: 600px;
-       }
-     }
-     
-     @media (max-width: 768px) {
-       .category-dropdown {
-         width: 100%;
-         left: 0;
-         right: 0;
-       }
-     
-       .dropdown-category {
-         width: 100%;
-         padding-right: 0;
-       }
-     
-       header {
-         flex-wrap: wrap;
-         height: auto;
-         padding: 10px;
-       }
-     
-       .search {
-         width: 100%;
-         margin-left: 0;
-         margin-top: 10px;
-       }
-     
-       .actions {
-         position: relative;
-         right: auto;
-         margin-top: 10px;
-         width: 100%;
-         justify-content: space-between;
-       }
-     }
-     
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 150px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.category {
+  position: relative;
+}
+
+.category-trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.category h3 {
+  font-weight: normal;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.category-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 800px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.category:hover .category-dropdown {
+  display: block;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+}
+
+.dropdown-category {
+  width: 50%;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+.dropdown-category h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-category ul li {
+  margin-bottom: 8px;
+}
+
+.dropdown-category ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  display: block;
+  padding: 3px 0;
+  transition: color 0.5s;
+}
+
+.dropdown-category ul li a:hover {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+.dropdown-footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  text-align: right;
+  clear: both;
+}
+
+.dropdown-footer a {
+  color: darkblue;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.dropdown-footer a:hover {
+  text-decoration: underline;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+  position: relative;
+  width: 500px;
+}
+
+.search input[type="search"] {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.search button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search button img {
+  width: 20px;
+  height: 20px;
+}
+.cart img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  right: 20px;
+  position: absolute;
+}
+
+.actions .cart button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 10px;
+  border: none;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: white;
+}
+
+.actions .cart button:hover {
+  color: blue;
+}
+
+.actions .login button {
+  padding: 5px 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100px;
+  height: 40px;
+}
+
+.actions .login button:hover {
+  background-color: #f0f0f0;
+}
+
+.actions .register button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100px;
+  height: 40px;
+}
+
+.actions .register button:hover {
+  background-color: darkblue;
+}
+
+.actions a {
+  text-decoration: none;
+  color: inherit;
+}
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+#user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+
+#user-info #btn-logout {
+  padding: 5px 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#user-info #btn-logout:hover {
+  background-color: darkblue;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: darkblue;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu li {
+  flex: 1;
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 20px;
+  display: block;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  background-color: aqua;
+}
+
+.main-content {
+  padding: 30px 20px;
+  background-color: #f5f7fa;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+}
+.slider img {
+  width: 70%;
+  padding-top: 10px;
+  display: none;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+img.displaySlide {
+  display: block;
+}
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+}
+.prev {
+  left: 216px;
+}
+.next {
+  right: 183px;
+}
+.btn-details {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-details:hover {
+  background-color: #e9e9e9;
+  color: #333;
+}
+
+.course-section {
+  margin-bottom: 50px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 1px 3px #e0e0e0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.view-all-link {
+  color: blue;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+.view-all-link .arrow {
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.view-all-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  width: 23%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px #d1d1d1;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #c0c0c0;
+}
+
+.course-image {
+  position: relative;
+  height: 160px;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.course-badge.free {
+  background-color: #2ecc71;
+}
+
+.course-badge.bestseller {
+  background-color: #f39c12;
+}
+
+.course-badge.deal {
+  background-color: #e74c3c;
+}
+
+.course-badge.popular {
+  background-color: #9b59b6;
+}
+
+.course-badge.new {
+  background-color: #3498db;
+}
+
+.course-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-instructor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.course-instructor img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.course-instructor span {
+  font-size: 14px;
+  color: #666;
+}
+
+.course-content h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.course-rating {
+  margin-bottom: 10px;
+}
+.main-content {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px;
+  padding: 30px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px;
+}
+
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+.stats-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #777;
+  margin-top: 5px;
+}
+.stars {
+  color: #f9ca24;
+  letter-spacing: 2px;
+}
+
+.rating-count {
+  color: #666;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.course-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.course-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.discount {
+  background-color: #e74c3c;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.course-action {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  border: none;
+  width: 100%;
+  flex: 1;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+}
+
+.free-trial-section {
+  border-top: 3px solid #2ecc71;
+}
+
+.bestseller-section {
+  border-top: 3px solid #f39c12;
+}
+
+.deals-section {
+  border-top: 3px solid #e74c3c;
+}
+
+.popular-section {
+  border-top: 3px solid #9b59b6;
+}
+
+.new-section {
+  border-top: 3px solid #3498db;
+}
+#go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 5px;
+  display: none;
+}
+#go-to-top:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+/* Footer Styles */
+footer {
+  background-color: darkblue;
+  color: white;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+footer .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer .footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+footer h3 {
+  color: #f39c12;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+footer p,
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer ul li a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 25px;
+}
+
+footer .social-icons a img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+footer .social-icons a:hover {
+  transform: translateY(-3px);
+}
+.social-icons a {
+  font-size: 20px;
+}
+
+footer iframe {
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .course-card {
+    width: 31%;
+  }
+}
+
+@media (max-width: 992px) {
+  .course-card {
+    width: 47%;
+  }
+
+  .course-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-card {
+    width: 100%;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .course-section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    padding: 15px 10px;
+  }
+
+  .course-image {
+    height: 140px;
+  }
+
+  .course-content h3 {
+    font-size: 15px;
+  }
+}
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .category-dropdown {
+    width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .category-dropdown {
+    width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-dropdown {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .dropdown-category {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .search {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .actions {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
