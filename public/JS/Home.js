@@ -238,3 +238,52 @@ $(document).ready(function () {
     console.error("Error loading course data.");
   });
 });
+
+// Xử lý nút thêm vào giỏ hàng
+$(document).ready(function () {
+  $(".btn-add-cart").on("click", function () {
+    const courseId = $(this).find("#course-id").val();
+
+    // Lấy dữ liệu từ course.json
+    $.getJSON("../data/course.json", function (data) {
+      const allCourses = [...data.bestseller, ...data.freeTrial];
+      const selectedCourse = allCourses.find((course) => course.id == courseId);
+
+      if (selectedCourse) {
+        // Lấy giỏ hàng từ localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng
+        const existingItem = cart.find((item) => item.id == courseId);
+        if (existingItem) {
+          alert("Sản phẩm đã có trong giỏ hàng!");
+        } else {
+          cart.push(selectedCourse);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert("Đã thêm sản phẩm vào giỏ hàng!");
+          location.reload();
+        }
+      } else {
+        alert("Không tìm thấy sản phẩm!");
+      }
+    }).fail(function () {
+      alert("Không thể tải dữ liệu sản phẩm!");
+    });
+  });
+});
+
+// Xử lý số lượng sản phẩm trong giỏ hàng
+$(document).ready(function () {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Cập nhật số lượng sản phẩm trong giỏ hàng
+  function updateCartCount() {
+    const cartCount = $("#count");
+    if (cartCount.length) {
+      cartCount.text(`(${cart.length})`);
+    }
+  }
+
+  // Gọi hàm cập nhật số lượng khi trang được tải
+  updateCartCount();
+});

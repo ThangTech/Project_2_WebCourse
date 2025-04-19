@@ -1,6 +1,7 @@
 {
   "freeTrial": [
     {
+      "id": 1,
       "name": "HTML & CSS cơ bản",
       "image": "./Stograge/Images/Homecard/htmlcss.jpg",
       "instructor": "Nguyễn Văn Công",
@@ -14,6 +15,7 @@
       "detailsLink": "./Home/details1.html"
     },
     {
+      "id": 2,
       "name": "JavaScript cơ bản",
       "image": "./Stograge/Images/Homecard/js.jpg",
       "instructor": "Trần Thị Phương",
@@ -27,6 +29,7 @@
       "detailsLink": "./Home/details2.html"
     },
     {
+      "id": 3,
       "name": "Python cơ bản",
       "image": "./Stograge/Images/Homecard/py.jpg",
       "instructor": "Lê Văn Mai",
@@ -40,6 +43,7 @@
       "detailsLink": "./Home/details3.html"
     },
     {
+      "id": 4,
       "name": "Git & GitHub cơ bản",
       "image": "./Stograge/Images/Homecard/git.jpg",
       "instructor": "Phạm Văn Dương",
@@ -55,6 +59,7 @@
   ],
   "bestseller": [
     {
+      "id": 5,
       "name": "React",
       "image": "./Stograge/Images/Homecard/react1.jpg",
       "instructor": "Nguyễn Di Đan",
@@ -71,6 +76,7 @@
       "detailsLink": "./Home/details5.html"
     },
     {
+      "id": 6,
       "name": "NodeJS cơ bản",
       "image": "./Stograge/Images/Homecard/node.jpg",
       "instructor": "Ngô Thị Phan",
@@ -87,6 +93,7 @@
       "detailsLink": "./Home/details6.html"
     },
     {
+      "id": 7,
       "name": "Flutter cơ bản",
       "image": "./Stograge/Images/Homecard/flut1.jpg",
       "instructor": "Trần Thị Phương",
@@ -103,6 +110,7 @@
       "detailsLink": "./Home/details7.html"
     },
     {
+      "id": 8,
       "name": "Python Data Science",
       "image": "./Stograge/Images/Homecard/py1.jpg",
       "instructor": "Nguyễn Di Đan",

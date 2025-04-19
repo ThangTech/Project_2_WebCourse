@@ -1,43 +1,65 @@
 $(document).ready(function () {
-  $.getJSON("../data/course.json", function (data) {
-    const freeTrialCourses = data.freeTrial;
-    const bestSellerCourses = data.bestseller;
+  function parsePrice(priceString) {
+    return parseFloat(priceString.replace("đ", "").replace(/\./g, ""));
+  }
 
-    const freeTrialContainer = $("#free-trial-container");
-    if (freeTrialContainer.length) {
-      freeTrialCourses.forEach((course) => {
-        const courseElement = `
-                    <div class="course-item">
-                        <img src="${course.image}" alt="${course.name}" />
-                        <h3>${course.name}</h3>
-                        <p>${course.description}</p>
-                        <button class="add-to-cart" data-name="${course.name}" data-price="Free" data-image="${course.image}">Add to Cart</button>
-                    </div>
-                `;
-        freeTrialContainer.append(courseElement);
+  function formatPrice(priceNumber) {
+    return priceNumber.toLocaleString("vi-VN") + "đ";
+  }
+
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartEmpty = $("#cart-empty");
+    const cartContainer = $("#cart-container");
+    const cartItems = $("#cart-items");
+    const totalElement = $("#total");
+
+    if (cart.length === 0) {
+      cartEmpty.removeClass("hidden");
+      cartContainer.addClass("hidden");
+    } else {
+      cartEmpty.addClass("hidden");
+      cartContainer.removeClass("hidden");
+
+      cartItems.empty();
+      let total = 0;
+
+      cart.forEach((item) => {
+        const itemPrice = parsePrice(item.price);
+        total += itemPrice;
+
+        const cartItemHtml = `
+          <div class="cart-item">
+            <div class="item-image">
+              <img src=".${item.image}" alt="${item.name}" />
+            </div>
+            <div class="item-details">
+              <h3>${item.name}</h3>
+              <p>${item.description}</p>
+              <span class="item-price">${item.price}</span>
+            </div>
+            <button class="remove-item" data-id="${item.id}">Xoá</button>
+          </div>
+        `;
+        cartItems.append(cartItemHtml);
       });
+
+      totalElement.text(formatPrice(total));
     }
-    const cart = [];
-    $(document).on("click", ".add-to-cart", function () {
-      const name = $(this).data("name");
-      const price = $(this).data("price");
-      const image = $(this).data("image");
+  }
 
-      const course = { name, price, image };
-      cart.push(course);
-
-      // Save to localStorage
-      localStorage.setItem("cart", JSON.stringify(cart));
-
-      // Update cart count
-      const cartCount = $("#cart-count");
-      if (cartCount.length) {
-        cartCount.text(`(${cart.length})`);
-      }
-
-      alert(`${name} has been added to the cart!`);
-    });
-  }).fail(function () {
-    console.error("Error fetching courses");
+  $(document).on("click", ".remove-item", function () {
+    const itemId = $(this).data("id");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter((item) => item.id !== itemId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
   });
+
+  $("#removeAll").on("click", function () {
+    localStorage.removeItem("cart");
+    renderCart();
+  });
+
+  renderCart();
 });
