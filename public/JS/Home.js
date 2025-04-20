@@ -281,11 +281,13 @@ $(document).ready(function () {
   function updateCartCount() {
     const cartCount = $("#count");
     const mobileCartCount = $(".mobile-cart-link");
+
+    const countText = `Giỏ hàng (${cart.length})`;
     if (cartCount.length) {
       cartCount.text(`(${cart.length})`);
     }
     if(mobileCartCount.length) {
-      mobileCartCount.text(`(${cart.length})`);
+       mobileCartCount.html(`<i class="fa fa-shopping-cart"></i> ${countText}`);
     }
   }
 
