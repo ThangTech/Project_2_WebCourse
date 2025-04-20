@@ -262,7 +262,6 @@ $(document).ready(function () {
           localStorage.setItem("cart", JSON.stringify(cart));
           alert("Đã thêm sản phẩm vào giỏ hàng!");
           location.reload();
-          updateCartCount();
         }
       } else {
         alert("Không tìm thấy sản phẩm!");
@@ -280,14 +279,8 @@ $(document).ready(function () {
   // Cập nhật số lượng sản phẩm trong giỏ hàng
   function updateCartCount() {
     const cartCount = $("#count");
-    const mobileCartCount = $(".mobile-cart-link");
-
-    const countText = `Giỏ hàng (${cart.length})`;
     if (cartCount.length) {
       cartCount.text(`(${cart.length})`);
-    }
-    if(mobileCartCount.length) {
-       mobileCartCount.html(`<i class="fa fa-shopping-cart"></i> ${countText}`);
     }
   }
 
