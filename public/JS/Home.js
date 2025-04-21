@@ -1,3 +1,4 @@
+const authPath = ["cart.html","cart1.html","cart2.html","cart3.html","cart4.html","cart5.html","cart6.html","cart7.html","cart8.html"];
 $(document).ready(function () {
   let user = localStorage.getItem("auth");
   if (user) {
@@ -17,6 +18,7 @@ $(document).ready(function () {
 
   $("#btn-logout").on("click", function () {
     localStorage.removeItem("auth");
+    localStorage.removeItem("cart");
     window.location.reload();
   });
 });
@@ -36,6 +38,7 @@ $(document).ready(function () {
   }
   $("#mobile-logout").on("click", function () {
     localStorage.removeItem("auth");
+    localStorage.removeItem("cart");
     window.location.reload();
   });
 });
@@ -106,7 +109,7 @@ $(document).ready(function () {
     const user = localStorage.getItem("auth");
     return user !== null;
   }
-  $(document).on("click", ".btn.btn-primary", function (event) { 
+  $(document).on("click", ".btn.btn-primary, .btn-cart", function (event) {
     //Nếu render html bằng jquery thì phải dùng $(document) và các class, id đặt ngay sau phần tử bắt sự kiện
     /**
      * VD:
@@ -299,4 +302,22 @@ $(document).ready(function () {
       alert("Không thể tải dữ liệu sản phẩm!");
     });
   });
+});
+
+$(document).ready(function () {
+  function isLoggedIn() {
+    const user = localStorage.getItem("auth");
+    return user !== null; // Kiểm tra xem người dùng đã đăng nhập hay chưa
+  }
+
+  // Kiểm tra nếu URL chứa "cart*.html"
+  const currentPath = window.location.pathname;
+  for (let i = 0; i < authPath.length; i++) {
+    if (currentPath.includes(authPath[i])) {
+      if (!isLoggedIn()) {
+        alert("Bạn cần đăng nhập để truy cập !");
+        window.location.href = "../Home/Login.html"; 
+      }
+    }
+  }
 });
