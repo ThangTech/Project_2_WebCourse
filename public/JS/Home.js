@@ -106,8 +106,13 @@ $(document).ready(function () {
     const user = localStorage.getItem("auth");
     return user !== null;
   }
-
-  $(".btn.btn-primary").on("click", function (event) {
+  $(document).on("click", ".btn.btn-primary", function (event) { 
+    //Nếu render html bằng jquery thì phải dùng $(document) và các class, id đặt ngay sau phần tử bắt sự kiện
+    /**
+     * VD:
+     * Ban đầu: $(".btn.btn-primary").on("click", function (event) {...}
+     * Khi render html bằng jquery: $(document).on("click", ".btn.btn-primary", function (event) {...}
+     */
     event.preventDefault();
     if (!isLoggedIn()) {
       alert("Bạn cần đăng nhập để tiếp tục!");
