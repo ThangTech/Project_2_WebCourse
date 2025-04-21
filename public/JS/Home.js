@@ -21,7 +21,6 @@ $(document).ready(function () {
   });
 });
 
-
 $(document).ready(function () {
   let user = localStorage.getItem("auth");
   if (user) {
@@ -41,7 +40,6 @@ $(document).ready(function () {
   });
 });
 
-
 $(document).ready(function () {
   let showGoToTop = 1300;
   $(window).scroll(function () {
@@ -57,7 +55,6 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 });
-
 
 $(document).ready(function () {
   const slides = $(".slide");
@@ -159,7 +156,12 @@ $(document).ready(function () {
 
 // Hiển thị sản phẩm học thử miễn phí và bán chạy nhất
 $(document).ready(function () {
-  $.getJSON("../data/course.json", function (data) {
+  // Kiểm tra đường dẫn hiện tại
+  const currentPath = window.location.pathname;
+  const jsonPath = currentPath.includes("index.html")
+    ? "./data/course.json"
+    : "../data/course.json";
+  $.getJSON(jsonPath, function (data) {
     const bestsellerCourses = data.bestseller;
     const freeTrialCourses = data.freeTrial;
 
@@ -248,8 +250,8 @@ $(document).ready(function () {
 $(document).ready(function () {
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartCountDesktop = $("#count"); 
-    const cartCountMobile = $(".mobile-cart-link #count"); 
+    const cartCountDesktop = $("#count");
+    const cartCountMobile = $(".mobile-cart-link #count");
 
     // Cập nhật số lượng sản phẩm trong giỏ hàng
     const countText = `(${cart.length})`;
@@ -283,7 +285,7 @@ $(document).ready(function () {
           cart.push(selectedCourse);
           localStorage.setItem("cart", JSON.stringify(cart));
           alert("Đã thêm sản phẩm vào giỏ hàng!");
-          updateCartCount(); 
+          updateCartCount();
         }
       } else {
         alert("Không tìm thấy sản phẩm!");
