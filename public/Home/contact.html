@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Contact</title>
-       <link rel="stylesheet" href="../CSS/contact.css">
-</head>
-<body>
-       
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../CSS/contact.css" />
+  </head>
+  <body>
+    <div class="contact-container">
+       <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <div class="contact-left-title">
+          <h2>Liên hệ với chúng tôi</h2>
+          <hr />
+        </div>
+        <input type="hidden" name="access_key" value="a244526d-83d3-4a4b-9909-bd407a076af7">
+        <input
+          type="text"
+          name="name"
+          placeholder="Tên của bạn"
+          class="contact-inputs"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email của bạn"
+          class="contact-inputs"
+          required
+        />
+        <textarea
+          name="message"
+          class="contact-inputs"
+          placeholder="Nhập thông tin..."
+          required
+        ></textarea>
+        <button type="submit">
+          Gửi <img src="../Stograge/Images/Home/arrow_icon.png" alt="" />
+        </button>
+      </form>
+      <div class="contact-right">
+        <img src="../Stograge/Images/Home/right_img.png" alt="Contact Image" />
+      </div>
+    </div>
+  </body>
 </html>
