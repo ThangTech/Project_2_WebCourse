@@ -159,7 +159,7 @@ $(document).ready(function () {
 
 // Hiển thị sản phẩm học thử miễn phí và bán chạy nhất
 $(document).ready(function () {
-  $.getJSON("../data/course.json", function (data) {
+  $.getJSON("./data/course.json", function (data) {
     const bestsellerCourses = data.bestseller;
     const freeTrialCourses = data.freeTrial;
 
