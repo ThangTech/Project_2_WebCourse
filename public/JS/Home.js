@@ -20,6 +20,8 @@ $(document).ready(function () {
     window.location.reload();
   });
 });
+
+
 $(document).ready(function () {
   let user = localStorage.getItem("auth");
   if (user) {
@@ -38,6 +40,8 @@ $(document).ready(function () {
     window.location.reload();
   });
 });
+
+
 $(document).ready(function () {
   let showGoToTop = 1300;
   $(window).scroll(function () {
@@ -53,6 +57,7 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 });
+
 
 $(document).ready(function () {
   const slides = $(".slide");
