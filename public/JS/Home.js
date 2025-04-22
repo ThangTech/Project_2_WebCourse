@@ -1,4 +1,14 @@
-const authPath = ["cart.html","cart1.html","cart2.html","cart3.html","cart4.html","cart5.html","cart6.html","cart7.html","cart8.html"];
+const authPath = [
+  "cart.html",
+  "cart1.html",
+  "cart2.html",
+  "cart3.html",
+  "cart4.html",
+  "cart5.html",
+  "cart6.html",
+  "cart7.html",
+  "cart8.html",
+];
 $(document).ready(function () {
   let user = localStorage.getItem("auth");
   if (user) {
@@ -19,6 +29,8 @@ $(document).ready(function () {
   $("#btn-logout").on("click", function () {
     localStorage.removeItem("auth");
     localStorage.removeItem("cart");
+    localStorage.removeItem("totalPrice");
+    localStorage.removeItem("courseBought");
     window.location.reload();
   });
 });
@@ -39,6 +51,8 @@ $(document).ready(function () {
   $("#mobile-logout").on("click", function () {
     localStorage.removeItem("auth");
     localStorage.removeItem("cart");
+    localStorage.removeItem("totalPrice");
+    localStorage.removeItem("courseBought");
     window.location.reload();
   });
 });
@@ -109,7 +123,9 @@ $(document).ready(function () {
     const user = localStorage.getItem("auth");
     return user !== null;
   }
+
   $(document).on("click", ".btn.btn-primary, .btn-cart", function (event) {
+    const courseBought = JSON.parse(localStorage.getItem("courseBought"));
     //Nếu render html bằng jquery thì phải dùng $(document) và các class, id đặt ngay sau phần tử bắt sự kiện
     /**
      * VD:
@@ -121,8 +137,18 @@ $(document).ready(function () {
       alert("Bạn cần đăng nhập để tiếp tục!");
       window.location.href = "./Home/Login.html";
     } else {
-      const courseLink = $(this).attr("href");
-      window.location.href = courseLink;
+      let courseLink = $(this).attr("href");
+      if (courseBought) {
+        const match = courseLink.match(/\d+/);
+        const courseId = match ? match[0] : null; // Lấy id khóa học từ đường dẫn
+        for (let i = 0; i < courseBought.length; i++) {
+          if (courseBought[i].id == courseId) {
+            courseLink = courseLink.replace("cart", "studyNow"); // Thay đổi đường dẫn từ cart thành studyNow
+            break;
+          }
+        }
+      }
+      window.location.href = courseLink; // Chuyển hướng đến đường dẫn đã lấy được
     }
   });
 });
@@ -259,16 +285,12 @@ $(document).ready(function () {
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCountDesktop = $("#count");
-    const cartCountMobile = $(".mobile-cart-link #count");
+    const cartCountMobile = $("#count-mobile");
 
     // Cập nhật số lượng sản phẩm trong giỏ hàng
     const countText = `(${cart.length})`;
-    if (cartCountDesktop.length) {
-      cartCountDesktop.text(countText);
-    }
-    if (cartCountMobile.length) {
-      cartCountMobile.text(countText);
-    }
+    cartCountDesktop.text(countText);
+    cartCountMobile.text(countText);
   }
 
   // Gọi hàm cập nhật số lượng khi trang được tải
@@ -316,7 +338,7 @@ $(document).ready(function () {
     if (currentPath.includes(authPath[i])) {
       if (!isLoggedIn()) {
         alert("Bạn cần đăng nhập để truy cập !");
-        window.location.href = "../Home/Login.html"; 
+        window.location.href = "../Home/Login.html";
       }
     }
   }

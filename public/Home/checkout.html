@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../CSS/checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-container">
+      <h1>Thanh toán</h1>
+      <form id="checkout-form">
+        <label for="cardNumber">Số thẻ:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required />
+
+        <label for="cardHolder">Tên chủ thẻ:</label>
+        <input type="text" id="cardHolder" name="cardHolder" required />
+
+        <label for="amount">Số tiền thanh toán:</label>
+        <input type="number" id="amount" name="amount" readonly/>
+
+        <button type="submit">Thanh toán</button>
+      </form>
+      <div id="message"></div>
+    </div>
+    <script src="../JS/jquery/jquery-3.7.1.js"></script>
+    <script src="../JS/checkout.js"></script>
+  </body>
+</html>

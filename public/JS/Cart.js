@@ -63,3 +63,18 @@ $(document).ready(function () {
 
   renderCart();
 });
+
+// Xử lý sự kiện khi người dùng nhấn nút thanh toán
+$(document).ready(function () {
+  function parsePrice(priceString) {
+    return parseFloat(priceString.replace("đ", "").replace(/\./g, ""));
+  }
+  const totalPriceString = $("#total").text().trim(); // .val() dùng cho input,select,textarea, .text() dùng cho span, div, p
+  const totalPrice = parsePrice(totalPriceString);
+
+  $(".checkout-btn").on("click", function () {
+    event.preventDefault();
+    localStorage.setItem("totalPrice", totalPrice);
+    window.location.href = "./checkout.html";
+  });
+});

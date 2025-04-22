@@ -1,0 +1,12 @@
+[
+  {
+    "cardNumber": "1234567890123456",
+    "cardHolder": "Nguyen Van Thang",
+    "balance": 10000000.00
+  },
+  {
+    "cardNumber": "9876543210987654",
+    "cardHolder": "Nguyen Di Dan",
+    "balance": 5000000.00
+  }
+]

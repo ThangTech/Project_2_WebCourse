@@ -79,6 +79,18 @@
   color: white;
   font-size: 15px;
 }
+.checkout-btn{
+  background-color: green;
+  display: block;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 130px;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin-left: auto;
+  cursor: pointer;
+}
 
 .removeAll {
   background-color: red;
@@ -116,20 +128,20 @@
 
 .cart-item {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
-  width: 100%; 
+  width: 100%;
 }
 
 .cart-item .item-image {
-  width: 15%; 
+  width: 15%;
 }
 
 .cart-item .item-image img {
-  width: 100%; 
+  width: 100%;
   object-fit: contain;
 }
 
@@ -162,5 +174,5 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  margin-left: 10px; 
+  margin-left: 10px;
 }

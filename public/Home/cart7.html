@@ -9,14 +9,8 @@
     <link rel="icon" href="../Stograge/Images/course.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/style.css" />
     <link rel="stylesheet" href="../CSS/cart5.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="../JS/jquery/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../JS/jqhello.js"></script>
@@ -137,7 +131,7 @@
         <ul>
           <li><a href="../index.html">Trang chủ</a></li>
           <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
-          <li><a href="#">Khoá học của tôi</a></li>
+          <li><a href="./myCourse.html">Khoá học của tôi</a></li>
         </ul>
       </nav>
     </div>
@@ -224,7 +218,6 @@
                 <div class="discount-badge">50% giảm giá</div>
               </div>
               <div class="purchase-buttons">
-                <button class="btn-buy-now">Mua ngay</button>
                 <button class="btn-add-cart">
                   Thêm vào giỏ hàng
                   <input type="hidden" id="course-id" value="7" />
@@ -268,7 +261,7 @@
           <h3>Liên kết nhanh</h3>
           <ul>
             <li><a href="../index.html">Trang chủ</a></li>
-            <li><a href="#">Khóa học</a></li>
+            <li><a href="./myCourse.html">Khóa học</a></li>
             <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
             <li><a href="./contact.html">Liên hệ</a></li>
           </ul>
@@ -305,6 +298,13 @@
         <p>&copy; 2025 My's Course. All rights reserved.</p>
       </div>
       <script src="../JS/Home.js"></script>
+      <script>
+        $(document).ready(function () {
+          $(".btn-buy-now").click(function () {
+            window.location.href = "../Home/checkout.html";
+          });
+        });
+      </script>
     </footer>
   </body>
 </html>

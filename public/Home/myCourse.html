@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mua khóa học - React.js - Từ cơ bản đến thành thạo</title>
-    <link rel="icon" href="../Stograge/Images/course.jpg" type="image/x-icon" />
+    <title>Khóa học của tôi</title>
+    <link rel="stylesheet" href="../CSS/myCourse.css" />
     <link rel="stylesheet" href="../CSS/style.css" />
-    <link rel="stylesheet" href="../CSS/cart5.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="../JS/jquery/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../JS/jqhello.js"></script>
@@ -28,12 +33,12 @@
             <div class="dropdown-category">
               <h4>Lập trình Web</h4>
               <ul>
-                <li><a href="#">HTML/CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">React</a></li>
+                <li><a href="../Home/studyNow1.html">HTML/CSS</a></li>
+                <li><a href="../Home/studyNow2.html">JavaScript</a></li>
+                <li><a href="../Home/studyNow5.html">React</a></li>
                 <li><a href="#">Vue</a></li>
                 <li><a href="#">Angular</a></li>
-                <li><a href="#">Node.js</a></li>
+                <li><a href="../Home/studyNow6.html">Node.js</a></li>
                 <li><a href="#">PHP</a></li>
                 <li><a href="#">Laravel</a></li>
               </ul>
@@ -41,7 +46,7 @@
             <div class="dropdown-category">
               <h4>Lập trình Mobile</h4>
               <ul>
-                <li><a href="#">React Native</a></li>
+                <li><a href="../Home/studyNow7.html">React Native</a></li>
                 <li><a href="#">Flutter</a></li>
                 <li><a href="#">Android (Java/Kotlin)</a></li>
                 <li><a href="#">iOS (Swift)</a></li>
@@ -50,7 +55,7 @@
             <div class="dropdown-category">
               <h4>Ngôn ngữ lập trình</h4>
               <ul>
-                <li><a href="#">Python</a></li>
+                <li><a href="../Home/studyNow3.html">Python</a></li>
                 <li><a href="#">Java</a></li>
                 <li><a href="#">C/C++</a></li>
                 <li><a href="#">C#</a></li>
@@ -81,7 +86,7 @@
             <div class="dropdown-category">
               <h4>Trí tuệ nhân tạo</h4>
               <ul>
-                <li><a href="#">Machine Learning</a></li>
+                <li><a href="../Home/studyNow8.html">Machine Learning</a></li>
                 <li><a href="#">Deep Learning</a></li>
                 <li><a href="#">Computer Vision</a></li>
                 <li><a href="#">NLP</a></li>
@@ -94,16 +99,24 @@
         </div>
       </div>
       <div class="search">
-        <input type="search" placeholder="Tìm kiếm khóa học" required />
-        <button type="submit">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Tìm kiếm khóa học"
+          required
+        />
+        <button type="submit" id="search-button">
           <img src="../Stograge/Images/Home/search.jpg" alt="Search Icon" />
         </button>
+        <div class="search-results" id="search-results"></div>
       </div>
       <div class="actions">
         <div class="cart">
           <button>
             <img src="../Stograge/Images/Home/cart.jpg" alt="Cart Icon" />
-            <a href="../Home/cart.html">Giỏ hàng <span id="count"></span></a>
+            <a class="btn-cart" href="../Home/cart.html"
+              >Giỏ hàng <span id="count"></span
+            ></a>
           </button>
         </div>
         <div class="auth">
@@ -124,126 +137,101 @@
         </div>
       </div>
     </header>
+    <div class="mobile-nav">
+      <div class="mobile-nav-container">
+        <div class="mobile-logo">
+          <img src="../Stograge/Images/Home/logo1.jpg" alt="logo" />
+        </div>
+        <div class="mobile-actions">
+          <div class="mobile-search-container">
+            <input
+              type="search"
+              id="mobile-search-input"
+              placeholder="Tìm kiếm khóa học"
+              class="mobile-search-input"
+            />
+            <button id="mobile-search-close" class="mobile-search-close">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+          <button id="mobile-menu-button" class="mobile-icon-button">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+      <div class="mobile-menu">
+        <div class="mobile-menu-header">
+          <h3>Menu</h3>
+          <button id="mobile-menu-close" class="mobile-menu-close">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-section">
+            <ul>
+              <li>
+                <a href="../index.html"><i class="fa fa-home"></i> Trang chủ</a>
+              </li>
+              <li>
+                <a href="../Home/AboutUs.html"
+                  ><i class="fa fa-info-circle"></i> Giới thiệu</a
+                >
+              </li>
+              <li>
+                <a href="../Home/myCourse.html"
+                  ><i class="fa fa-book"></i> Khoá học của tôi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu-section">
+            <h4>Danh mục</h4>
+            <ul>
+              <li><a href="../Home/studyNow1.html">Lập trình Web</a></li>
+              <li><a href="">Lập trình Mobile</a></li>
+              <li><a href="#">Ngôn ngữ lập trình</a></li>
+              <li><a href="#">Cơ sở dữ liệu</a></li>
+              <li><a href="#">DevOps & Cloud</a></li>
+              <li><a href="#">Trí tuệ nhân tạo</a></li>
+            </ul>
+          </div>
+          <div class="mobile-user-actions">
+            <a href="../Home/cart.html" class="mobile-cart-link btn-cart"
+              ><i class="fa fa-shopping-cart"></i> Giỏ hàng
+              <span id="count-mobile"></span
+            ></a>
+            <a href="../Home/Login.html" class="mobile-login-link"
+              ><i class="fa fa-sign-in"></i> Đăng nhập</a
+            >
+            <a href="../Home/Register.html" class="mobile-register-link"
+              >Đăng ký</a
+            >
+            <div id="mobile-user-info" class="hidden">
+              <span id="mobile-welcome"></span>
+              <button id="mobile-logout">Đăng xuất</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="menu">
       <nav>
         <ul>
           <li><a href="../index.html">Trang chủ</a></li>
           <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
-          <li><a href="./myCourse.html">Khoá học của tôi</a></li>
+          <li><a href="../Home/myCourse.html">Khoá học của tôi</a></li>
         </ul>
       </nav>
     </div>
-    <div class="breadcrumb">
-      <a href="../index.html">Trang chủ</a> &gt;
-      <a href="#">Lập trình Web</a> &gt;
-      <a href="#">React.js</a>
-    </div>
-    <main class="purchase-container">
-      <div class="purchase-content">
-        <div class="course-header">
-          <div class="course-info">
-            <h1>React.js - Từ cơ bản đến thành thạo</h1>
-            <p class="course-description">
-              Học cách xây dựng ứng dụng web hiện đại với React.js. Khóa học
-              dành cho lập trình viên muốn thành thạo React từ cơ bản đến nâng
-              cao.
-            </p>
-            <div class="course-meta">
-              <div class="rating">
-                <span class="stars">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
-                </span>
-                <span class="rating-count">4,9 (325 xếp hạng)</span>
-                <span class="student-count">1.845 học viên</span>
-              </div>
-              <div class="instructor">
-                <p>Được tạo bởi <a href="#">Nguyễn Di Đan</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="course-preview">
-            <div class="preview-image">
-              <img
-                src="../Stograge/Images/Homecard/react1.jpg"
-                alt="React.js Course Preview"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="purchase-layout">
-          <div class="course-details-column">
-            <div class="content-section">
-              <h2>Bạn sẽ học được gì</h2>
-              <div class="learning-outcomes">
-                <ul>
-                  <li>
-                    <i class="fa fa-check"></i> Hiểu về React.js và tại sao cần
-                    sử dụng
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Thành thạo JSX và cách sử dụng
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Tạo và quản lý Components trong
-                    React
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Làm việc với Props và State
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Sử dụng Hooks (useState,
-                    useEffect, useContext)
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Tối ưu hiệu suất cho ứng dụng
-                    React
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="purchase-card-column">
-            <div class="purchase-card">
-              <div class="card-price">
-                <div class="current-price">799.000đ</div>
-                <div class="original-price">1.599.000đ</div>
-                <div class="discount-badge">50% giảm giá</div>
-              </div>
-              <div class="purchase-buttons">
-                <button class="btn-add-cart">
-                  Thêm vào giỏ hàng
-                  <input type="hidden" id="course-id" value="5" />
-                </button>
-              </div>
-              <div class="course-includes">
-                <h3>Khóa học này bao gồm:</h3>
-                <ul>
-                  <li>
-                    <i class="fa fa-play-circle"></i> 20 giờ video theo yêu cầu
-                  </li>
-                  <li><i class="fa fa-file-text"></i> 15 bài tập thực hành</li>
-                  <li><i class="fa fa-code"></i> 10 dự án thực tế</li>
-                  <li>
-                    <i class="fa fa-download"></i> 25 tài nguyên có thể tải
-                    xuống
-                  </li>
-                  <li>
-                    <i class="fa fa-mobile"></i> Truy cập trên thiết bị di động
-                    và TV
-                  </li>
-                  <li><i class="fa fa-infinity"></i> Truy cập trọn đời</li>
-                  <li>
-                    <i class="fa fa-certificate"></i> Chứng chỉ hoàn thành
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <main>
+      <div class="my-course-header">
+        <h1>Khóa học của tôi</h1>
+        <p>Danh sách các khóa học bạn đã mua</p>
+      </div>
+      <div class="course-container" id="course-container">
+        <!-- Các khóa học đã mua sẽ được hiển thị ở đây -->
       </div>
     </main>
     <footer>
@@ -256,10 +244,10 @@
         <div class="footer-column">
           <h3>Liên kết nhanh</h3>
           <ul>
-            <li><a href="../index.html">Trang chủ</a></li>
+            <li><a href="#">Trang chủ</a></li>
             <li><a href="./myCourse.html">Khóa học</a></li>
             <li><a href="../Home/AboutUs.html">Giới thiệu</a></li>
-            <li><a href="./contact.html">Liên hệ</a></li>
+            <li><a href="../Home/contact.html">Liên hệ</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -294,13 +282,8 @@
         <p>&copy; 2025 My's Course. All rights reserved.</p>
       </div>
       <script src="../JS/Home.js"></script>
-      <script>
-        $(document).ready(function () {
-          $(".btn-buy-now").click(function () {
-            window.location.href = "../Home/checkout.html";
-          });
-        });
-      </script>
+      <script src="../JS/Cart.js"></script>
+      <script src="../JS/myCourse.js"></script>
     </footer>
   </body>
 </html>
