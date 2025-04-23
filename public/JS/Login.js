@@ -25,16 +25,6 @@ $(document).ready(function () {
     let password = $("#password").val();
     let rememberMe = $("#remember").prop("checked");
 
-    if (username.length < 5 || username.length > 20) {
-      alert("Tên đăng nhập phải từ 5 đến 20 ký tự!");
-      return;
-    }
-
-    if (password.length < 8) {
-      alert("Mật khẩu phải có ít nhất 8 ký tự!");
-      return;
-    }
-
     const userLogin = users.filter((user) => user.username === username)[0];
     if (!userLogin) {
       alert("Người dùng không tồn tại!");

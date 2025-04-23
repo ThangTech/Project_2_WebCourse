@@ -19,13 +19,23 @@ $(document).ready(function () {
   getAllUsers((data) => {
     users.push(...data);
   });
-  
+
   $("#registerForm").on("submit", function (event) {
     event.preventDefault();
     let name = $("#name").val();
     let username = $("#username").val();
     let password = $("#password").val();
     let confirmPassword = $("#confirmPassword").val();
+
+    if (username.length < 5 || username.length > 20) {
+      alert("Tên đăng nhập phải từ 5 đến 20 ký tự!");
+      return;
+    }
+
+    if (password.length < 8) {
+      alert("Mật khẩu phải có ít nhất 8 ký tự!");
+      return;
+    }
 
     if (password !== confirmPassword) {
       alert("Mật khẩu không khớp!");
