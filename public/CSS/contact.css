@@ -8,24 +8,25 @@ body {
   background: linear-gradient(#ffdad5, #fff7f9);
 }
 .contact-container {
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
 .contact-left {
-  flex: 1; 
-  max-width: 50%; 
+  flex: 1;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 20px;
+  position: relative;
 }
 .contact-right {
-  flex: 1; 
+  flex: 1;
   max-width: 50%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
@@ -76,13 +77,26 @@ body {
   border-radius: 50px;
   background: linear-gradient(270deg, #ff994f, #fa6d86);
   cursor: pointer;
+  flex-direction: row;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 .contact-left button img {
   height: 15px;
 }
 .contact-right img {
-  max-width: 100%; 
-  height: auto; 
+  max-width: 100%;
+  height: auto;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+  width: 60px;
+}
+#back-button{
+       position: absolute;
+       bottom: 0px;
+       left: 270px;
 }
 @media (max-width: 800px) {
   .contact-inputs {
