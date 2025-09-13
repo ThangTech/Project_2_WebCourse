@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   function parsePrice(priceString) {
     return parseFloat(priceString.replace("đ", "").replace(/\./g, ""));
   }
@@ -9,19 +9,19 @@ $(document).ready(function () {
 
   function renderCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartEmpty = $("#cart-empty");
-    const cartContainer = $("#cart-container");
-    const cartItems = $("#cart-items");
-    const totalElement = $("#total");
+    const cartEmpty = document.getElementById("cart-empty");
+    const cartContainer = document.getElementById("cart-container");
+    const cartItems = document.getElementById("cart-items");
+    const totalElement = document.getElementById("total");
 
     if (cart.length === 0) {
-      cartEmpty.removeClass("hidden");
-      cartContainer.addClass("hidden");
+      cartEmpty.classList.remove("hidden");
+      cartContainer.classList.add("hidden");
     } else {
-      cartEmpty.addClass("hidden");
-      cartContainer.removeClass("hidden");
+      cartEmpty.classList.add("hidden");
+      cartContainer.classList.remove("hidden");
 
-      cartItems.empty();
+      cartItems.innerHTML = "";
       let total = 0;
 
       cart.forEach((item) => {
@@ -41,40 +41,44 @@ $(document).ready(function () {
             <button class="remove-item" data-id="${item.id}">Xoá</button>
           </div>
         `;
-        cartItems.append(cartItemHtml);
+        cartItems.insertAdjacentHTML("beforeend", cartItemHtml);
       });
 
-      totalElement.text(formatPrice(total));
+      totalElement.textContent = formatPrice(total);
     }
   }
 
-  $(document).on("click", ".remove-item", function () {
-    const itemId = $(this).data("id");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter((item) => item.id !== itemId);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-item")) {
+      const itemId = event.target.getAttribute("data-id");
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter((item) => item.id !== itemId);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
   });
 
-  $("#removeAll").on("click", function () {
-    localStorage.removeItem("cart");
-    renderCart();
-  });
+  var removeAllBtn = document.getElementById("removeAll");
+  if (removeAllBtn) {
+    removeAllBtn.addEventListener("click", function () {
+      localStorage.removeItem("cart");
+      renderCart();
+    });
+  }
 
   renderCart();
-});
 
-// Xử lý sự kiện khi người dùng nhấn nút thanh toán
-$(document).ready(function () {
-  function parsePrice(priceString) {
-    return parseFloat(priceString.replace("đ", "").replace(/\./g, ""));
-  }
-  const totalPriceString = $("#total").text().trim(); // .val() dùng cho input,select,textarea, .text() dùng cho span, div, p
-  const totalPrice = parsePrice(totalPriceString);
-
-  $(".checkout-btn").on("click", function () {
-    event.preventDefault();
-    localStorage.setItem("totalPrice", totalPrice);
-    window.location.href = "./checkout.html";
+  // Xử lý sự kiện khi người dùng nhấn nút thanh toán
+  var checkoutBtns = document.querySelectorAll(".checkout-btn");
+  checkoutBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      const totalPriceString = document
+        .getElementById("total")
+        .textContent.trim();
+      const totalPrice = parsePrice(totalPriceString);
+      localStorage.setItem("totalPrice", totalPrice);
+      window.location.href = "./checkout.html";
+    });
   });
 });

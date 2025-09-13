@@ -1,9 +1,9 @@
-$(document).ready(function () {
-  const courseContainer = $("#course-container");
+document.addEventListener("DOMContentLoaded", function () {
+  const courseContainer = document.getElementById("course-container");
   const courses = JSON.parse(localStorage.getItem("courseBought")) || [];
 
   if (courses.length === 0) {
-    courseContainer.html("<p>Bạn chưa mua khóa học nào.</p>");
+    courseContainer.innerHTML = "<p>Bạn chưa mua khóa học nào.</p>";
   } else {
     courses.forEach((course) => {
       const courseElement = `
@@ -14,7 +14,7 @@ $(document).ready(function () {
           <a href="./studyNow${course.id}.html" class="btn-study">Học ngay</a>
         </div>
       `;
-      courseContainer.append(courseElement);
+      courseContainer.insertAdjacentHTML("beforeend", courseElement);
     });
   }
 });

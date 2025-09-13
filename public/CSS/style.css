@@ -9,16 +9,18 @@ header {
   height: 150px;
 }
 
-.logo {
+.header-content {
   display: flex;
   align-items: center;
-}
-
-.logo img {
   width: 100px;
   height: auto;
-  margin-right: 20px;
+  margin-right: 150px;
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: 4px;
+  color: #3498db;
 }
+
 button a {
   display: inline-flex;
   align-items: center;
@@ -211,7 +213,9 @@ button a {
 }
 
 .actions .login button:hover {
-  background-color: #f0f0f0;
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
 }
 
 .actions .register button {
@@ -228,7 +232,7 @@ button a {
 }
 
 .actions .register button:hover {
-  background-color: darkblue;
+  background-color: grey;
 }
 
 .actions a {
@@ -274,11 +278,12 @@ button a {
 .menu {
   display: flex;
   justify-content: center;
-  background-color: darkblue;
+  background-color: white;
   padding: 0;
-  margin-top: 10px;
   width: 100%;
   box-sizing: border-box;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  box-shadow: 0 4px 10px #ccc;
 }
 
 .menu ul {
@@ -296,7 +301,7 @@ button a {
 }
 
 .menu a {
-  color: white;
+  color: black;
   text-decoration: none;
   font-size: 16px;
   font-weight: normal;
@@ -307,7 +312,9 @@ button a {
 }
 
 .menu a:hover {
-  background-color: aqua;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
 }
 
 .main-content {
