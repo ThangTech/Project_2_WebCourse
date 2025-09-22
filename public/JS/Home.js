@@ -248,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
         courseCard.innerHTML = `
           <div class="course-image">
             <img src="${course.image}" alt="${course.name}" />
+            <div class="course-badge free">Miễn phí</div>
           </div>
           <div class="course-content">
             <div class="course-instructor">
@@ -281,65 +282,65 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Số lượng sản phẩm trong giỏ hàng và nút thêm vào giỏ hàng
-//   function updateCartCount() {
-//     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-//     const cartCountDesktop = document.getElementById("count");
-//     const cartCountMobile = document.getElementById("count-mobile");
-//     const countText = `(${cart.length})`;
-//     if (cartCountDesktop) cartCountDesktop.textContent = countText;
-//     if (cartCountMobile) cartCountMobile.textContent = countText;
-//   }
-//   updateCartCount();
-//   document.addEventListener("click", function (event) {
-//     if (event.target.closest(".btn-add-cart")) {
-//       const courseIdInput = event.target
-//         .closest(".btn-add-cart")
-//         .querySelector("#course-id");
-//       const courseId = courseIdInput ? courseIdInput.value : null;
-//       const currentPath = window.location.pathname;
-//       const jsonPath = currentPath.includes("index.html")
-//         ? "./data/course.json"
-//         : "../data/course.json";
-//       fetch(jsonPath)
-//         .then((response) => response.json())
-//         .then((data) => {
-//           const allCourses = [...data.bestseller, ...data.freeTrial];
-//           const selectedCourse = allCourses.find(
-//             (course) => course.id == courseId
-//           );
-//           if (selectedCourse) {
-//             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//             const existingItem = cart.find((item) => item.id == courseId);
-//             if (existingItem) {
-//               alert("Sản phẩm đã có trong giỏ hàng!");
-//             } else {
-//               cart.push(selectedCourse);
-//               localStorage.setItem("cart", JSON.stringify(cart));
-//               alert("Đã thêm sản phẩm vào giỏ hàng!");
-//               updateCartCount();
-//             }
-//           } else {
-//             alert("Không tìm thấy sản phẩm!");
-//           }
-//         })
-//         .catch(() => {
-//           alert("Không thể tải dữ liệu sản phẩm!");
-//         });
-//     }
-//   });
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCountDesktop = document.getElementById("count");
+    const cartCountMobile = document.getElementById("count-mobile");
+    const countText = `(${cart.length})`;
+    if (cartCountDesktop) cartCountDesktop.textContent = countText;
+    if (cartCountMobile) cartCountMobile.textContent = countText;
+  }
+  updateCartCount();
+  document.addEventListener("click", function (event) {
+    if (event.target.closest(".btn-add-cart")) {
+      const courseIdInput = event.target
+        .closest(".btn-add-cart")
+        .querySelector("#course-id");
+      const courseId = courseIdInput ? courseIdInput.value : null;
+      const currentPath = window.location.pathname;
+      const jsonPath = currentPath.includes("index.html")
+        ? "./data/course.json"
+        : "../data/course.json";
+      fetch(jsonPath)
+        .then((response) => response.json())
+        .then((data) => {
+          const allCourses = [...data.bestseller, ...data.freeTrial];
+          const selectedCourse = allCourses.find(
+            (course) => course.id == courseId
+          );
+          if (selectedCourse) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingItem = cart.find((item) => item.id == courseId);
+            if (existingItem) {
+              alert("Sản phẩm đã có trong giỏ hàng!");
+            } else {
+              cart.push(selectedCourse);
+              localStorage.setItem("cart", JSON.stringify(cart));
+              alert("Đã thêm sản phẩm vào giỏ hàng!");
+              updateCartCount();
+            }
+          } else {
+            alert("Không tìm thấy sản phẩm!");
+          }
+        })
+        .catch(() => {
+          alert("Không thể tải dữ liệu sản phẩm!");
+        });
+    }
+  });
 
   // Kiểm tra đăng nhập khi vào trang giỏ hàng
-//   function isLoggedIn2() {
-//     const user = localStorage.getItem("auth");
-//     return user !== null;
-//   }
-//   const currentPath2 = window.location.pathname;
-//   for (let i = 0; i < authPath.length; i++) {
-//     if (currentPath2.includes(authPath[i])) {
-//       if (!isLoggedIn2()) {
-//         alert("Bạn cần đăng nhập để truy cập !");
-//         window.location.href = "../Home/Login.html";
-//       }
-//     }
-//   }
+  function isLoggedIn2() {
+    const user = localStorage.getItem("auth");
+    return user !== null;
+  }
+  const currentPath2 = window.location.pathname;
+  for (let i = 0; i < authPath.length; i++) {
+    if (currentPath2.includes(authPath[i])) {
+      if (!isLoggedIn2()) {
+        alert("Bạn cần đăng nhập để truy cập !");
+        window.location.href = "../Home/Login.html";
+      }
+    }
+  }
 });
